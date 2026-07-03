@@ -75,7 +75,7 @@ export default function CustomService() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[55vh] min-h-[420px] bg-[#0f0e0c] overflow-hidden">
+      <section className="relative h-[55vh] min-h-[420px] bg-[#e5e5e5] overflow-hidden">
         <img
           src="/ai-replacements/hotel-reception.jpg"
           alt=""
@@ -84,7 +84,7 @@ export default function CustomService() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
-            <span className="text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase">
+            <span className="text-[#111111] text-[11px] font-bold tracking-[0.20em] uppercase">
               Bespoke Service
             </span>
             <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-4">
@@ -99,7 +99,7 @@ export default function CustomService() {
 
       {/* Intro */}
       <section className="max-w-[900px] mx-auto px-6 py-20 text-center">
-        <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
+        <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
           How We Work
         </span>
         <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mb-5">
@@ -122,7 +122,7 @@ export default function CustomService() {
                 }`}
               >
                 <div className={i % 2 === 1 ? "lg:[direction:ltr]" : ""}>
-                  <span className="text-[#737373] text-[13px] font-bold tracking-[0.12em] opacity-50">
+                  <span className="text-[#111111] text-[13px] font-bold tracking-[0.12em] opacity-50">
                     {step.num}
                   </span>
                   <h3 className="text-[var(--ink)] text-[1.3rem] font-black tracking-[0.03em] mt-2 mb-4">
@@ -149,7 +149,7 @@ export default function CustomService() {
       {/* Process Gallery */}
       <section className="py-20 px-6 max-w-[1280px] mx-auto">
         <div className="text-center mb-12">
-          <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
+          <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">
             The Workshop
           </span>
           <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mt-2">
@@ -177,7 +177,7 @@ export default function CustomService() {
       <section className="bg-[var(--panel)] py-20 px-6">
         <div className="max-w-[1100px] mx-auto">
           <div className="text-center mb-14">
-            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
+            <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">
               Who We Serve
             </span>
             <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mt-2">
@@ -188,7 +188,7 @@ export default function CustomService() {
             {serviceTypes.map((item) => (
               <div
                 key={item.title}
-                className="bg-[var(--bg)] border border-[var(--line)] p-8 hover:border-[#737373]/30 transition-colors"
+                className="bg-[var(--bg)] border border-[var(--line)] p-8 hover:border-[#34c759]/20/30 transition-colors"
               >
                 <span className="text-2xl mb-4 block">{item.icon}</span>
                 <h3 className="text-[var(--ink)] text-[16px] font-bold tracking-[0.04em] mb-3">
@@ -204,16 +204,16 @@ export default function CustomService() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[var(--ink)] py-16 px-6 text-center">
-        <h2 className="text-white text-[1.4rem] font-black tracking-[0.02em] mb-3">
+      <section className="bg-[#f8f8f8] py-16 px-6 text-center border-t border-black/8">
+        <h2 className="text-[#111111] text-[1.4rem] font-black tracking-[0.02em] mb-3">
           开始您的定制之旅
         </h2>
-        <p className="text-white/45 text-[14px] mb-8 max-w-[460px] mx-auto leading-relaxed">
+        <p className="text-[#111111]/45 text-[14px] mb-8 max-w-[460px] mx-auto leading-relaxed">
           描述您的项目，我们会在一到两个工作日内回复完整方案。
         </p>
         <Link
           to="/contact"
-          className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
+          className="inline-block px-10 py-3.5 bg-[#34c759] text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#34c759]/80 transition-colors"
         >
           提交需求
         </Link>

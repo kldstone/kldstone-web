@@ -30,7 +30,7 @@ const craftFields = [
     path: "/collections/marble",
   },
   {
-    title: "水刀拼花马赛克",
+    title: "水刀拼花",
     sub: "Waterjet Mosaic",
     desc: "水刀拼花是石材加工领域中最接近艺术创作的工艺。高压水流携带磨料，以每秒 800 米的速度穿透石材，切割精度达到 ±0.1mm。不同颜色、种类的石材被精确切割成设计好的形状，再像拼图般镶嵌组合。从古典欧式卷草纹到现代几何抽象，我们的水刀拼花团队由十年以上经验的工匠带领。每一件拼花作品出厂前都按图纸 1:1 预拼验收——在石头被镶嵌到您的空间之前，它已经在我们这里被完整地拼接了一次。",
     images: [
@@ -68,7 +68,7 @@ export default function Craftsmanship() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[55vh] min-h-[420px] bg-[#0f0e0c] overflow-hidden">
+      <section className="relative h-[55vh] min-h-[420px] bg-[#e5e5e5] overflow-hidden">
         <img
           src="/brand-gallery/100-heritage-img-2392.jpg"
           alt=""
@@ -77,7 +77,7 @@ export default function Craftsmanship() {
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
-            <span className="text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase">
+            <span className="text-[#111111] text-[11px] font-bold tracking-[0.20em] uppercase">
               Craftsmanship
             </span>
             <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-4">
@@ -92,7 +92,7 @@ export default function Craftsmanship() {
 
       {/* Philosophy */}
       <section className="max-w-[900px] mx-auto px-6 py-20 text-center">
-        <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
+        <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
           Philosophy
         </span>
         <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mb-5">
@@ -107,7 +107,7 @@ export default function Craftsmanship() {
       <section className="bg-[var(--panel)] py-20 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-14">
-            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
+            <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">
               匠艺传承
             </span>
             <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">
@@ -147,7 +147,7 @@ export default function Craftsmanship() {
               }`}
             >
               <div className={idx % 2 === 1 ? "lg:[direction:ltr]" : ""}>
-                <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
+                <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">
                   {field.sub}
                 </span>
                 <h3 className="text-[var(--ink)] text-[1.35rem] font-black tracking-[0.03em] mt-2 mb-4">
@@ -158,7 +158,7 @@ export default function Craftsmanship() {
                 </p>
                 <Link
                   to={field.path}
-                  className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.08em] border-b border-[#737373]/40 pb-1 hover:text-[var(--ink)] transition-colors"
+                  className="inline-block text-[var(--ink)] text-[12px] font-bold tracking-[0.08em] border-b border-[#34c759]/20/40 pb-1 hover:text-[var(--ink)] transition-colors"
                 >
                   了解详情 →
                 </Link>
@@ -187,7 +187,7 @@ export default function Craftsmanship() {
       {/* Detail Gallery */}
       <section className="py-20 px-6 max-w-[1280px] mx-auto">
         <div className="text-center mb-12">
-          <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
+          <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">
             工艺细节
           </span>
           <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mt-2">
@@ -212,16 +212,16 @@ export default function Craftsmanship() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[var(--ink)] py-16 px-6 text-center">
-        <h2 className="text-white text-[1.4rem] font-black tracking-[0.02em] mb-3">
+      <section className="bg-[#f8f8f8] py-16 px-6 text-center border-t border-black/8">
+        <h2 className="text-[#111111] text-[1.4rem] font-black tracking-[0.02em] mb-3">
           好的工艺不需要解释
         </h2>
-        <p className="text-white/45 text-[14px] mb-8 max-w-[460px] mx-auto leading-relaxed">
-          但如果您想亲眼看看，我们随时欢迎您到水头的工厂来。
+        <p className="text-[#111111]/45 text-[14px] mb-8 max-w-[460px] mx-auto leading-relaxed">
+          但如果您想亲眼看看，我们随时欢迎您到石井的工厂来。
         </p>
         <Link
           to="/contact"
-          className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
+          className="inline-block px-10 py-3.5 bg-[#34c759] text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#34c759]/80 transition-colors"
         >
           预约参观
         </Link>

@@ -61,12 +61,12 @@ export default function Spaces() {
   return (
     <div>
       {/* Page Header */}
-      <section className="bg-[var(--ink)] py-20 px-6 text-center">
-        <span className="text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase">Our Spaces</span>
-        <h1 className="text-white text-[clamp(1.8rem,3.5vw,2.8rem)] font-black tracking-[0.03em] mt-3 mb-4">
+      <section className="bg-[#f8f8f8] py-20 px-6 text-center border-b border-black/8">
+        <span className="text-[#111111] text-[11px] font-bold tracking-[0.20em] uppercase">Our Spaces</span>
+        <h1 className="text-[#111111] text-[clamp(1.8rem,3.5vw,2.8rem)] font-black tracking-[0.03em] mt-3 mb-4">
           空间作品
         </h1>
-        <p className="text-white/50 text-[15px] max-w-[600px] mx-auto leading-relaxed">
+        <p className="text-[#111111]/50 text-[15px] max-w-[600px] mx-auto leading-relaxed">
           石材的最终归宿，不是仓库，而是空间。以下是我们参与的项目实景——酒店、别墅、商业空间，石材都在那里安静地发光。
         </p>
       </section>
@@ -79,7 +79,7 @@ export default function Spaces() {
             onClick={() => setActiveCat(cat)}
             className={`px-5 py-2 text-[12px] font-semibold tracking-[0.06em] border transition-all ${
               activeCat === cat
-                ? "bg-[var(--ink)] text-[#737373] border-[var(--ink)]"
+                ? "bg-[#34c759] text-white border-[#34c759]"
                 : "bg-transparent text-[var(--muted)] border-[var(--line)] hover:border-[var(--ink)]"
             }`}
           >
@@ -147,7 +147,7 @@ export default function Spaces() {
         </p>
           <Link
             to="/contact"
-            className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
+            className="inline-block px-10 py-3.5 bg-[#34c759] text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#34c759]/80 transition-colors"
           >
             立即咨询
           </Link>

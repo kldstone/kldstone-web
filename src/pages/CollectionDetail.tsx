@@ -46,12 +46,12 @@ const collectionData: Record<string, {
     ],
   },
   mosaic: {
-    title: "水刀拼花马赛克",
+    title: "水刀拼花",
     subtitle: "Waterjet Mosaic · 以水为刀，以石为纸",
     heroImg: "/brand-gallery/105-patterns-img-1859.jpg",
     intro: [
       "水刀切割的水流速度是每秒600米——大约是音速的两倍。当这股高压水流穿过天然石材，它会精确地按照CAD图纸切割出每一个弧度、每一片花瓣、每一道几何边界。这不是简单的切割，这是一场在石头上进行的精密刺绣。",
-      "我们的水刀拼花马赛克团队从图纸设计开始，到选石配色，再到切割拼装，全程手工参与。每一幅拼花，都像一幅在地板上展开的石头壁画——不同颜色、不同纹理的石材被巧妙拼接，形成令人惊叹的视觉效果。",
+      "我们的水刀拼花团队从图纸设计开始，到选石配色，再到切割拼装，全程手工参与。每一幅拼花，都像一幅在地板上展开的石头壁画——不同颜色、不同纹理的石材被巧妙拼接，形成令人惊叹的视觉效果。",
     ],
     features: [
       { title: "五轴数控水刀", desc: "4台五轴联动水刀切割机，精度可达±0.1mm。支持任意复杂的CAD图纸路径。", img: "/brand-gallery/083-details-img-1566.jpg" },
@@ -164,7 +164,7 @@ export default function CollectionDetail() {
       <div className="min-h-[60vh] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-black text-[var(--ink)] mb-4">未找到该系列</h1>
-          <Link to="/collections" className="text-[#737373] font-bold tracking-[0.06em]">← 返回石材系列</Link>
+          <Link to="/collections" className="text-[#111111] font-bold tracking-[0.06em]">← 返回石材系列</Link>
         </div>
       </div>
     );
@@ -173,16 +173,16 @@ export default function CollectionDetail() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[55vh] min-h-[400px] bg-[#0f0e0c] overflow-hidden">
+      <section className="relative h-[55vh] min-h-[400px] bg-[#e5e5e5] overflow-hidden">
         <img src={data.heroImg} alt="" className="w-full h-full object-cover opacity-80" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
-            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">{data.subtitle}</span>
+            <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">{data.subtitle}</span>
             <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-3">
               {data.title}
             </h1>
-            <Link to="/collections" className="inline-block text-white/50 text-[12px] tracking-[0.08em] hover:text-[#737373] transition-colors mt-2">
+            <Link to="/collections" className="inline-block text-white/50 text-[12px] tracking-[0.08em] hover:text-[#34c759] transition-colors mt-2">
               ← 返回石材系列
             </Link>
           </div>
@@ -204,7 +204,7 @@ export default function CollectionDetail() {
       <section className="bg-[var(--panel)] py-20 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-14">
-            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Process</span>
+            <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">Process</span>
             <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">生产工艺</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -224,7 +224,7 @@ export default function CollectionDetail() {
       {/* Full Gallery */}
       <section className="max-w-[1280px] mx-auto px-6 py-20">
         <div className="text-center mb-14">
-          <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Gallery</span>
+          <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">Gallery</span>
           <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">产品图集</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -237,22 +237,22 @@ export default function CollectionDetail() {
       </section>
 
       {/* Specs Table */}
-      <section className="bg-[var(--ink)] py-20 px-6">
+      <section className="bg-[#f8f8f8] py-20 px-6 border-t border-black/8">
         <div className="max-w-[820px] mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Specifications</span>
-            <h2 className="text-white text-[1.5rem] font-black tracking-[0.03em] mt-2">规格参数</h2>
+            <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">Specifications</span>
+            <h2 className="text-[#111111] text-[1.5rem] font-black tracking-[0.03em] mt-2">规格参数</h2>
           </div>
-          <div className="bg-[var(--ink-soft)] border border-white/6">
+          <div className="bg-white border border-black/8">
             {data.specs.map((s, i) => (
               <div
                 key={s.label}
                 className={`flex items-center justify-between px-8 py-5 ${
-                  i < data.specs.length - 1 ? "border-b border-white/5" : ""
+                  i < data.specs.length - 1 ? "border-b border-black/5" : ""
                 }`}
               >
-                <span className="text-white/50 text-[13px] font-medium tracking-[0.04em]">{s.label}</span>
-                <span className="text-white/85 text-[13px] font-semibold text-right max-w-[60%]">{s.value}</span>
+                <span className="text-[#111111]/50 text-[13px] font-medium tracking-[0.04em]">{s.label}</span>
+                <span className="text-[#111111]/85 text-[13px] font-semibold text-right max-w-[60%]">{s.value}</span>
               </div>
             ))}
           </div>
@@ -260,7 +260,7 @@ export default function CollectionDetail() {
           <div className="text-center mt-10">
             <Link
               to="/contact"
-              className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
+              className="inline-block px-10 py-3.5 bg-[#34c759] text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#34c759]/80 transition-colors"
             >
               咨询该系列
             </Link>

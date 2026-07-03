@@ -11,7 +11,7 @@ const collectionCategories = [
   },
   {
     slug: "mosaic",
-    title: "水刀拼花马赛克",
+    title: "水刀拼花",
     subtitle: "Waterjet Mosaic",
     desc: "将天然石材变为精确至0.1毫米的艺术拼图。从古典纹样到现代几何，我们以水为刀，以石为纸。",
     hero: "/brand-gallery/031-materials-img-1954.jpg",
@@ -39,12 +39,12 @@ export default function Collections() {
   return (
     <div>
       {/* Page Header */}
-      <section className="bg-[var(--ink)] py-20 px-6 text-center">
-        <span className="text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase">Collections</span>
-        <h1 className="text-white text-[clamp(1.8rem,3.5vw,2.8rem)] font-black tracking-[0.03em] mt-3 mb-4">
+      <section className="bg-[#f8f8f8] py-20 px-6 text-center border-b border-black/8">
+        <span className="text-[#111111] text-[11px] font-bold tracking-[0.20em] uppercase">Collections</span>
+        <h1 className="text-[#111111] text-[clamp(1.8rem,3.5vw,2.8rem)] font-black tracking-[0.03em] mt-3 mb-4">
           石材系列
         </h1>
-        <p className="text-white/50 text-[15px] max-w-[560px] mx-auto leading-relaxed">
+        <p className="text-[#111111]/50 text-[15px] max-w-[560px] mx-auto leading-relaxed">
           从荒料到成品，我们将每一块天然石材视为独立的生命体。以下是康利德的四大产品系列。
         </p>
       </section>
@@ -62,8 +62,8 @@ export default function Collections() {
                   <img src={cat.thumb} alt="" className="w-full aspect-[3/4] object-cover" />
                 </div>
               </div>
-              <span className="text-[#737373] text-[10px] font-bold tracking-[0.16em] uppercase">{cat.subtitle}</span>
-              <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.02em] mt-1 mb-2 group-hover:text-[#737373] transition-colors">
+              <span className="text-[#111111] text-[10px] font-bold tracking-[0.16em] uppercase">{cat.subtitle}</span>
+              <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.02em] mt-1 mb-2 group-hover:text-[#111111] transition-colors">
                 {cat.title}
               </h2>
               <p className="text-[var(--muted)] text-[14px] leading-relaxed max-w-[480px]">{cat.desc}</p>
@@ -72,7 +72,7 @@ export default function Collections() {
               <div className="flex flex-wrap gap-2 mt-5">
                 <Link
                   to={`/collections/${cat.slug}`}
-                  className="inline-block px-3 py-1.5 bg-[#737373]/10 text-[#737373] text-[11px] font-semibold tracking-[0.04em] border border-[#737373]/25 hover:bg-[#737373]/20 transition-colors"
+                  className="inline-block px-3 py-1.5 bg-[#34c759]/10 text-[#111111] text-[11px] font-semibold tracking-[0.04em] border border-[#34c759]/20/25 hover:bg-[#34c759]/20 transition-colors"
                 >
                   查看详情
                 </Link>
@@ -92,7 +92,7 @@ export default function Collections() {
       <section className="bg-[var(--panel)] py-16 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[#737373] text-[10px] font-bold tracking-[0.16em] uppercase">Material Library</span>
+            <span className="text-[#111111] text-[10px] font-bold tracking-[0.16em] uppercase">Material Library</span>
             <h2 className="text-[var(--ink)] text-[1.3rem] font-black tracking-[0.03em] mt-2">石材品种精选</h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
@@ -108,7 +108,7 @@ export default function Collections() {
                 <div className="overflow-hidden mb-2 img-hover">
                   <img src={m.src} alt={m.name} className="w-full aspect-[1/1] object-cover" />
                 </div>
-                <p className="text-[var(--ink)] text-[12px] font-semibold tracking-[0.03em] text-center group-hover:text-[#737373] transition-colors">
+                <p className="text-[var(--ink)] text-[12px] font-semibold tracking-[0.03em] text-center group-hover:text-[#111111] transition-colors">
                   {m.name}
                 </p>
               </div>

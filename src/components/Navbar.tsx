@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between min-h-[34px]">
           <span className="truncate">天然大理石 · 水刀拼花 · 石材工艺品 · 福建南安石井</span>
           <span className="hidden sm:flex items-center gap-4 ml-4 shrink-0">
-            <a href="tel:+8615959999064" className="hover:text-[#34c759] transition-colors">+86 159 5999 9064</a>
+            <a href="tel:+8615659069988" className="hover:text-[#34c759] transition-colors">+86 156 5906 9988</a>
             <span className="text-black/20">|</span>
             <span className="flex items-center gap-1.5 text-[#111111]/50">
               微信

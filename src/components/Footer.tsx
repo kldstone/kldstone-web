@@ -48,7 +48,7 @@ export default function Footer() {
               <h4 className="text-[#111111]/90 text-[12px] font-bold tracking-[0.10em] uppercase mb-5">联系</h4>
               <div className="flex flex-col gap-3 text-[13px] text-[#111111]/45">
                 <p>福建省南安市石井镇后店工业区</p>
-                <p className="text-[#34c759] font-medium">+86 159 5999 9064</p>
+                <p className="text-[#34c759] font-medium">+86 156 5906 9988</p>
                 <p>
                   <a href="mailto:kldstone.china@gmail.com" className="hover:text-[#34c759] transition-colors">
                     kldstone.china@gmail.com

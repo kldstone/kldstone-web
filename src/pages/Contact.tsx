@@ -44,8 +44,8 @@ export default function Contact() {
               {/* Phone */}
               <div>
                 <span className="text-[#111111] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">电话</span>
-                <a href="tel:+8615959999064" className="text-[#111111] text-[18px] font-black tracking-[0.02em] hover:opacity-60 transition-colors">
-                  +86 159 5999 9064
+                <a href="tel:+8615659069988" className="text-[#111111] text-[18px] font-black tracking-[0.02em] hover:opacity-60 transition-colors">
+                  +86 156 5906 9988
                 </a>
               </div>
 
@@ -69,7 +69,7 @@ export default function Contact() {
                   <div>
                     <p className="text-[#111111] text-[14px] font-semibold">微信联系</p>
                     <p className="text-[#111111] text-[12px]">添加微信获取实时报价与石材咨询</p>
-                    <p className="text-[#111111] text-[13px] font-medium mt-0.5">微信号：159 5999 9064</p>
+                    <p className="text-[#111111] text-[13px] font-medium mt-0.5">微信号：156 5906 9988</p>
                   </div>
                 </div>
               </div>

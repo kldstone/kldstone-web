@@ -30,7 +30,7 @@ export default function Footer() {
                   { label: "关于我们", to: "/about" },
                   { label: "联系我们", to: "/contact" },
                 ].map((l) => (
-                  <Link key={l.to} to={l.to} className="text-white/45 text-[13px] hover:text-[#737373] transition-colors">
+                  <Link key={l.to} to={l.to} className="text-white/45 text-[13px] hover:text-[#111111] transition-colors">
                     {l.label}
                   </Link>
                 ))}
@@ -41,10 +41,10 @@ export default function Footer() {
             <div>
               <h4 className="text-white/90 text-[12px] font-bold tracking-[0.10em] uppercase mb-5">产品分类</h4>
               <div className="flex flex-col gap-3">
-                <Link to="/collections/marble" className="text-white/45 text-[13px] hover:text-[#737373] transition-colors">天然大理石</Link>
-                <Link to="/collections/mosaic" className="text-white/45 text-[13px] hover:text-[#737373] transition-colors">水刀拼花马赛克</Link>
-                <Link to="/collections/furniture" className="text-white/45 text-[13px] hover:text-[#737373] transition-colors">石材家具摆件</Link>
-                <Link to="/collections/countertop" className="text-white/45 text-[13px] hover:text-[#737373] transition-colors">石材台面定制</Link>
+                <Link to="/collections/marble" className="text-white/45 text-[13px] hover:text-[#111111] transition-colors">天然大理石</Link>
+                <Link to="/collections/mosaic" className="text-white/45 text-[13px] hover:text-[#111111] transition-colors">水刀拼花马赛克</Link>
+                <Link to="/collections/furniture" className="text-white/45 text-[13px] hover:text-[#111111] transition-colors">石材家具摆件</Link>
+                <Link to="/collections/countertop" className="text-white/45 text-[13px] hover:text-[#111111] transition-colors">石材台面定制</Link>
               </div>
             </div>
 
@@ -52,10 +52,10 @@ export default function Footer() {
             <div>
               <h4 className="text-white/90 text-[12px] font-bold tracking-[0.10em] uppercase mb-5">联系</h4>
               <div className="flex flex-col gap-3 text-[13px] text-white/45">
-                <p>福建省南安市水头镇惠典工业区</p>
-                <p className="text-[#737373] font-medium">+86 159 5999 9064</p>
+                <p>福建省南安市石井镇后店工业区</p>
+                <p className="text-[#111111] font-medium">+86 159 5999 9064</p>
                 <p>
-                  <a href="mailto:kldstone.china@gmail.com" className="hover:text-[#737373] transition-colors">
+                  <a href="mailto:kldstone.china@gmail.com" className="hover:text-[#111111] transition-colors">
                     kldstone.china@gmail.com
                   </a>
                 </p>

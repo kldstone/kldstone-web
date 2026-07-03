@@ -77,7 +77,7 @@ export default function Navbar() {
             />
             <span className="hidden lg:block">
               <strong className="block text-[#111111] text-[13px] tracking-[0.10em] leading-tight">康利德 KLD</strong>
-              <small className="block text-[#111111]/45 text-[10px] tracking-[0.06em] mt-[2px]">天然石材 · 福建南安</small>
+              <small className="block text-[#111111]/45 text-[10px] tracking-[0.06em] mt-[2px]">天然石材 · 中国水头</small>
             </span>
           </Link>
 

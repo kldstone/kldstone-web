@@ -77,7 +77,7 @@ export default function Craftsmanship() {
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.20em] uppercase">
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase">
               Craftsmanship
             </span>
             <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-4">
@@ -92,7 +92,7 @@ export default function Craftsmanship() {
 
       {/* Philosophy */}
       <section className="max-w-[900px] mx-auto px-6 py-20 text-center">
-        <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
+        <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
           Philosophy
         </span>
         <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mb-5">
@@ -107,7 +107,7 @@ export default function Craftsmanship() {
       <section className="bg-[var(--panel)] py-20 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-14">
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
               匠艺传承
             </span>
             <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">
@@ -147,7 +147,7 @@ export default function Craftsmanship() {
               }`}
             >
               <div className={idx % 2 === 1 ? "lg:[direction:ltr]" : ""}>
-                <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">
+                <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
                   {field.sub}
                 </span>
                 <h3 className="text-[var(--ink)] text-[1.35rem] font-black tracking-[0.03em] mt-2 mb-4">
@@ -158,7 +158,7 @@ export default function Craftsmanship() {
                 </p>
                 <Link
                   to={field.path}
-                  className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.08em] border-b border-[#b8873d]/40 pb-1 hover:text-[var(--ink)] transition-colors"
+                  className="inline-block text-[var(--gold)] text-[12px] font-bold tracking-[0.08em] border-b border-[#737373]/40 pb-1 hover:text-[var(--ink)] transition-colors"
                 >
                   了解详情 →
                 </Link>
@@ -187,7 +187,7 @@ export default function Craftsmanship() {
       {/* Detail Gallery */}
       <section className="py-20 px-6 max-w-[1280px] mx-auto">
         <div className="text-center mb-12">
-          <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">
+          <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
             工艺细节
           </span>
           <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mt-2">
@@ -221,7 +221,7 @@ export default function Craftsmanship() {
         </p>
         <Link
           to="/contact"
-          className="inline-block px-10 py-3.5 bg-[#b8873d] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#d4a64a] transition-colors"
+          className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
         >
           预约参观
         </Link>

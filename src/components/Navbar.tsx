@@ -50,7 +50,7 @@ export default function Navbar() {
         <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between min-h-[34px]">
           <span className="truncate">天然大理石 · 水刀拼花马赛克 · 石材工艺品 · 福建南安水头</span>
           <span className="hidden sm:flex items-center gap-4 ml-4 shrink-0">
-            <a href="tel:+8615959999064" className="hover:text-[#b8873d] transition-colors">+86 159 5999 9064</a>
+            <a href="tel:+8615959999064" className="hover:text-[#737373] transition-colors">+86 159 5999 9064</a>
             <span className="text-white/20">|</span>
             <span className="flex items-center gap-1.5">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
@@ -90,7 +90,7 @@ export default function Navbar() {
                   to={link.href}
                   className={`inline-flex items-center justify-center min-h-[44px] px-[12px] text-[12.5px] font-semibold tracking-[0.05em] transition-colors whitespace-nowrap ${
                     isActive(link.href)
-                      ? "text-[#b8873d]"
+                      ? "text-[#737373]"
                       : "text-white/60 hover:text-white"
                   }`}
                   onMouseEnter={() => link.children && setDropdownOpen(true)}
@@ -114,7 +114,7 @@ export default function Navbar() {
                         key={child.href}
                         to={child.href}
                         className={`block px-5 py-3 text-[12px] font-medium tracking-[0.04em] transition-colors ${
-                          location.pathname === child.href ? "text-[#b8873d]" : "text-white/50 hover:text-white hover:bg-white/5"
+                          location.pathname === child.href ? "text-[#737373]" : "text-white/50 hover:text-white hover:bg-white/5"
                         }`}
                       >
                         {child.label}
@@ -133,7 +133,7 @@ export default function Navbar() {
                 key={link.href}
                 to={link.href}
                 className={`inline-flex items-center justify-center min-h-[44px] px-[9px] text-[11px] font-semibold tracking-[0.03em] transition-colors whitespace-nowrap ${
-                  isActive(link.href) ? "text-[#b8873d]" : "text-white/60 hover:text-white"
+                  isActive(link.href) ? "text-[#737373]" : "text-white/60 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -145,7 +145,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             to="/contact"
-            className="hidden md:inline-flex items-center justify-center min-h-[40px] px-5 bg-[#b8873d] text-[#111] text-[12px] font-bold tracking-[0.06em] border border-[rgba(184,135,61,0.6)] hover:bg-[#d4a64a] transition-colors whitespace-nowrap shrink-0"
+            className="hidden md:inline-flex items-center justify-center min-h-[40px] px-5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.06em] border border-[rgba(184,135,61,0.6)] hover:bg-[#a3a3a3] transition-colors whitespace-nowrap shrink-0"
           >
             获取报价
           </Link>
@@ -171,7 +171,7 @@ export default function Navbar() {
                 <Link
                   to={link.href}
                   className={`block py-3.5 text-[13px] font-semibold tracking-[0.06em] border-b border-white/5 transition-colors ${
-                    isActive(link.href) ? "text-[#b8873d]" : "text-white/60 hover:text-white"
+                    isActive(link.href) ? "text-[#737373]" : "text-white/60 hover:text-white"
                   }`}
                 >
                   {link.label}
@@ -183,7 +183,7 @@ export default function Navbar() {
                       <Link
                         key={child.href}
                         to={child.href}
-                        className="block py-2.5 text-[12px] tracking-[0.04em] text-white/40 hover:text-[#b8873d] transition-colors border-b border-white/3"
+                        className="block py-2.5 text-[12px] tracking-[0.04em] text-white/40 hover:text-[#737373] transition-colors border-b border-white/3"
                       >
                         {child.label}
                       </Link>
@@ -194,7 +194,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/contact"
-              className="mt-3 block text-center bg-[#b8873d] text-[#111] py-3 text-[12px] font-bold tracking-[0.06em]"
+              className="mt-3 block text-center bg-[#737373] text-[#111] py-3 text-[12px] font-bold tracking-[0.06em]"
             >
               获取报价
             </Link>

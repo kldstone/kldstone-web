@@ -62,7 +62,7 @@ export default function Spaces() {
     <div>
       {/* Page Header */}
       <section className="bg-[var(--ink)] py-20 px-6 text-center">
-        <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.20em] uppercase">Our Spaces</span>
+        <span className="text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase">Our Spaces</span>
         <h1 className="text-white text-[clamp(1.8rem,3.5vw,2.8rem)] font-black tracking-[0.03em] mt-3 mb-4">
           空间作品
         </h1>
@@ -79,7 +79,7 @@ export default function Spaces() {
             onClick={() => setActiveCat(cat)}
             className={`px-5 py-2 text-[12px] font-semibold tracking-[0.06em] border transition-all ${
               activeCat === cat
-                ? "bg-[var(--ink)] text-[#b8873d] border-[var(--ink)]"
+                ? "bg-[var(--ink)] text-[#737373] border-[var(--ink)]"
                 : "bg-transparent text-[var(--muted)] border-[var(--line)] hover:border-[var(--ink)]"
             }`}
           >
@@ -147,7 +147,7 @@ export default function Spaces() {
         </p>
           <Link
             to="/contact"
-            className="inline-block px-10 py-3.5 bg-[#b8873d] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#d4a64a] transition-colors"
+            className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
           >
             立即咨询
           </Link>

@@ -76,7 +76,7 @@ export default function Quality() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.20em] uppercase">
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase">
               Quality Assurance
             </span>
             <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-4">
@@ -91,7 +91,7 @@ export default function Quality() {
 
       {/* Philosophy */}
       <section className="max-w-[900px] mx-auto px-6 py-20 text-center">
-        <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
+        <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
           Our Standard
         </span>
         <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mb-5">
@@ -106,7 +106,7 @@ export default function Quality() {
       <section className="bg-[var(--panel)] py-20 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-14">
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
               品质管控
             </span>
             <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">
@@ -133,7 +133,7 @@ export default function Quality() {
             {qualityChecks.map((item) => (
               <div
                 key={item.title}
-                className="bg-[var(--bg)] border border-[var(--line)] p-8 hover:border-[#b8873d]/30 transition-colors"
+                className="bg-[var(--bg)] border border-[var(--line)] p-8 hover:border-[#737373]/30 transition-colors"
               >
                 <h3 className="text-[var(--ink)] text-[16px] font-bold tracking-[0.04em] mb-3">
                   {item.title}
@@ -150,7 +150,7 @@ export default function Quality() {
       {/* Packaging & Delivery */}
       <section className="py-20 px-6 max-w-[1280px] mx-auto">
         <div className="text-center mb-14">
-          <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">
+          <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
             物流与交付
           </span>
           <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">
@@ -177,7 +177,7 @@ export default function Quality() {
               />
             </div>
             <div className={i % 2 === 1 ? "lg:[direction:ltr]" : ""}>
-              <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.12em] opacity-60">
+              <span className="text-[#737373] text-[11px] font-bold tracking-[0.12em] opacity-60">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="text-[var(--ink)] text-[1.25rem] font-black tracking-[0.03em] mt-2 mb-4">
@@ -195,7 +195,7 @@ export default function Quality() {
       <section className="bg-[var(--panel)] py-20 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">
               包装现场
             </span>
             <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mt-2">
@@ -227,7 +227,7 @@ export default function Quality() {
         </p>
         <Link
           to="/contact"
-          className="inline-block px-10 py-3.5 bg-[#b8873d] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#d4a64a] transition-colors"
+          className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
         >
           沟通品质需求
         </Link>

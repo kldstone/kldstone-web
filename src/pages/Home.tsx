@@ -92,7 +92,7 @@ export default function Home() {
                 key={i}
                 onClick={() => setSlide(i)}
                 className={`w-12 h-[2px] transition-all duration-500 ${
-                  i === slide ? "bg-[#b8873d]" : "bg-white/30"
+                  i === slide ? "bg-[#737373]" : "bg-white/30"
                 }`}
               />
             ))}
@@ -111,7 +111,7 @@ export default function Home() {
       {/* Brand Narrative */}
       <section className="py-28 px-6">
         <div className="max-w-[960px] mx-auto text-center">
-          <span className="inline-block text-[#b8873d] text-[11px] font-bold tracking-[0.20em] uppercase mb-6">Since 2015 · Fujian Nan'an</span>
+          <span className="inline-block text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase mb-6">Since 2015 · Fujian Nan'an</span>
           <h2 className="text-[var(--ink)] text-[clamp(1.8rem,3.5vw,2.8rem)] font-black tracking-[0.02em] leading-[1.25] mb-8">
             我们相信，每一块石头，<br/>都有一段未被讲述的故事。
           </h2>
@@ -142,7 +142,7 @@ export default function Home() {
       {/* Collections Overview */}
       <section className="py-24 px-6 max-w-[1280px] mx-auto" id="collections">
         <div className="text-center mb-16">
-          <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">Our Collections</span>
+          <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Our Collections</span>
           <h2 className="text-[var(--ink)] text-[clamp(1.5rem,2.8vw,2.2rem)] font-black tracking-[0.02em] mt-3">石材系列</h2>
         </div>
 
@@ -157,12 +157,12 @@ export default function Home() {
                 <img src={col.imgs[0]} alt="" className="w-full aspect-[4/5] object-cover" />
                 <img src={col.imgs[1]} alt="" className="w-full aspect-[4/5] object-cover mt-8" />
               </div>
-              <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.16em] uppercase">{col.subtitle}</span>
-              <h3 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.02em] mt-1 mb-3 group-hover:text-[#b8873d] transition-colors">
+              <span className="text-[#737373] text-[11px] font-bold tracking-[0.16em] uppercase">{col.subtitle}</span>
+              <h3 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.02em] mt-1 mb-3 group-hover:text-[#737373] transition-colors">
                 {col.title}
               </h3>
               <p className="text-[var(--muted)] text-[14px] leading-relaxed max-w-[500px]">{col.desc}</p>
-              <span className="inline-block mt-4 text-[var(--gold)] text-[12px] font-bold tracking-[0.08em] border-b border-[#b8873d]/40 pb-1">
+              <span className="inline-block mt-4 text-[var(--gold)] text-[12px] font-bold tracking-[0.08em] border-b border-[#737373]/40 pb-1">
                 探索系列 →
               </span>
             </Link>
@@ -201,7 +201,7 @@ export default function Home() {
 
             {/* Text */}
             <div>
-              <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">Handcrafted</span>
+              <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Handcrafted</span>
               <h2 className="text-[var(--ink)] text-[clamp(1.5rem,2.5vw,2rem)] font-black tracking-[0.02em] mt-3 mb-6 leading-tight">
                 手工的温度，<br/>机器的精度
               </h2>
@@ -215,7 +215,7 @@ export default function Home() {
               </div>
               <Link
                 to="/about"
-                className="inline-block mt-8 text-[var(--gold)] text-[12px] font-bold tracking-[0.08em] border-b border-[#b8873d]/40 pb-1 hover:text-[var(--ink)] transition-colors"
+                className="inline-block mt-8 text-[var(--gold)] text-[12px] font-bold tracking-[0.08em] border-b border-[#737373]/40 pb-1 hover:text-[var(--ink)] transition-colors"
               >
                 了解我们的工艺 →
               </Link>
@@ -227,7 +227,7 @@ export default function Home() {
       {/* Trust Signals */}
       <section className="py-24 px-6 max-w-[1280px] mx-auto">
         <div className="text-center mb-16">
-          <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">Trust</span>
+          <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Trust</span>
           <h2 className="text-[var(--ink)] text-[clamp(1.5rem,2.5vw,2rem)] font-black tracking-[0.02em] mt-3">
             我们的承诺
           </h2>
@@ -277,7 +277,7 @@ export default function Home() {
           </p>
           <Link
             to="/contact"
-            className="inline-block px-10 py-3.5 bg-[#b8873d] text-[#111] text-[13px] font-bold tracking-[0.08em] uppercase hover:bg-[#d4a64a] transition-colors"
+            className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[13px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
           >
             开始合作
           </Link>

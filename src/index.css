@@ -5,15 +5,15 @@
 @tailwind utilities;
 
 :root {
-  --ink: #1a1612;
-  --ink-soft: #2d2822;
-  --muted: #6b6258;
-  --paper: #f8f5f0;
-  --panel: #fffaf4;
-  --charcoal: #0f0e0c;
-  --gold: #b8873d;
-  --gold-light: #d4a64a;
-  --line: rgba(26, 22, 18, 0.10);
+  --ink: #111111;
+  --ink-soft: #333333;
+  --muted: #737373;
+  --paper: #f5f5f5;
+  --panel: #ffffff;
+  --charcoal: #0f0f0f;
+  --accent: #737373;
+  --accent-light: #a3a3a3;
+  --line: rgba(0, 0, 0, 0.10);
   --line-dark: rgba(255, 255, 255, 0.08);
 }
 
@@ -48,7 +48,7 @@ a {
 }
 
 ::selection {
-  background: rgba(184, 135, 61, 0.25);
+  background: rgba(115, 115, 115, 0.25);
   color: var(--ink);
 }
 
@@ -88,7 +88,7 @@ a {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--paper); }
 ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 /* Image hover */
 .img-hover { overflow: hidden; }

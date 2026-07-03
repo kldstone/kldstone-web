@@ -49,7 +49,7 @@ export default function Contact() {
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.20em] uppercase">Contact</span>
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.20em] uppercase">Contact</span>
             <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-3">
               联系我们
             </h1>
@@ -70,7 +70,7 @@ export default function Contact() {
             <div className="space-y-8">
               {/* Address */}
               <div>
-                <span className="text-[#b8873d] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">公司地址</span>
+                <span className="text-[#737373] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">公司地址</span>
                 <p className="text-[var(--ink)] text-[15px] font-semibold leading-relaxed">
                   福建省南安市水头镇惠典工业区
                 </p>
@@ -81,25 +81,25 @@ export default function Contact() {
 
               {/* Phone */}
               <div>
-                <span className="text-[#b8873d] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">电话</span>
-                <a href="tel:+8615959999064" className="text-[var(--ink)] text-[18px] font-black tracking-[0.02em] hover:text-[#b8873d] transition-colors">
+                <span className="text-[#737373] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">电话</span>
+                <a href="tel:+8615959999064" className="text-[var(--ink)] text-[18px] font-black tracking-[0.02em] hover:text-[#737373] transition-colors">
                   +86 159 5999 9064
                 </a>
               </div>
 
               {/* Email */}
               <div>
-                <span className="text-[#b8873d] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">邮箱</span>
-                <a href="mailto:kldstone.china@gmail.com" className="text-[var(--ink)] text-[15px] font-semibold hover:text-[#b8873d] transition-colors">
+                <span className="text-[#737373] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">邮箱</span>
+                <a href="mailto:kldstone.china@gmail.com" className="text-[var(--ink)] text-[15px] font-semibold hover:text-[#737373] transition-colors">
                   kldstone.china@gmail.com
                 </a>
               </div>
 
               {/* WeChat */}
               <div>
-                <span className="text-[#b8873d] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">微信</span>
+                <span className="text-[#737373] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">微信</span>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#07c160] rounded-full flex items-center justify-center">
+                  <div className="w-10 h-10 bg-[#6b6b6b] rounded-full flex items-center justify-center">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
                       <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18z"/>
                     </svg>
@@ -125,8 +125,8 @@ export default function Contact() {
 
             {submitted ? (
               <div className="bg-[var(--panel)] border border-[var(--line)] p-12 text-center">
-                <div className="w-16 h-16 mx-auto mb-6 bg-[#b8873d]/10 rounded-full flex items-center justify-center">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b8873d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <div className="w-16 h-16 mx-auto mb-6 bg-[#737373]/10 rounded-full flex items-center justify-center">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#737373" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12"/>
                   </svg>
                 </div>
@@ -136,7 +136,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => { setSubmitted(false); setForm({ name: "", email: "", company: "", message: "" }); }}
-                  className="mt-8 text-[#b8873d] text-[13px] font-bold tracking-[0.06em] hover:text-[var(--ink)] transition-colors"
+                  className="mt-8 text-[#737373] text-[13px] font-bold tracking-[0.06em] hover:text-[var(--ink)] transition-colors"
                 >
                   发送另一条消息
                 </button>
@@ -151,7 +151,7 @@ export default function Contact() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-white border border-[var(--line)] px-4 py-3 text-[14px] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[#b8873d] transition-colors"
+                      className="w-full bg-white border border-[var(--line)] px-4 py-3 text-[14px] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[#737373] transition-colors"
                       placeholder="您的姓名"
                     />
                   </div>
@@ -162,7 +162,7 @@ export default function Contact() {
                       required
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-white border border-[var(--line)] px-4 py-3 text-[14px] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[#b8873d] transition-colors"
+                      className="w-full bg-white border border-[var(--line)] px-4 py-3 text-[14px] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[#737373] transition-colors"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -174,7 +174,7 @@ export default function Contact() {
                     type="text"
                     value={form.company}
                     onChange={(e) => setForm({ ...form, company: e.target.value })}
-                    className="w-full bg-white border border-[var(--line)] px-4 py-3 text-[14px] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[#b8873d] transition-colors"
+                    className="w-full bg-white border border-[var(--line)] px-4 py-3 text-[14px] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[#737373] transition-colors"
                     placeholder="您的公司名称"
                   />
                 </div>
@@ -186,7 +186,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     rows={6}
-                    className="w-full bg-white border border-[var(--line)] px-4 py-3 text-[14px] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[#b8873d] transition-colors resize-none"
+                    className="w-full bg-white border border-[var(--line)] px-4 py-3 text-[14px] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none focus:border-[#737373] transition-colors resize-none"
                     placeholder="请描述您的需求：产品类型、规格尺寸、数量、交货时间等……"
                   />
                 </div>
@@ -200,7 +200,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-3.5 bg-[#b8873d] text-[#111] text-[12px] font-bold tracking-[0.10em] uppercase hover:bg-[#d4a64a] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.10em] uppercase hover:bg-[#a3a3a3] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {submitting ? "提交中……" : "发送询盘"}
                 </button>

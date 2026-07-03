@@ -164,7 +164,7 @@ export default function CollectionDetail() {
       <div className="min-h-[60vh] flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-black text-[var(--ink)] mb-4">未找到该系列</h1>
-          <Link to="/collections" className="text-[#b8873d] font-bold tracking-[0.06em]">← 返回石材系列</Link>
+          <Link to="/collections" className="text-[#737373] font-bold tracking-[0.06em]">← 返回石材系列</Link>
         </div>
       </div>
     );
@@ -178,11 +178,11 @@ export default function CollectionDetail() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">{data.subtitle}</span>
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">{data.subtitle}</span>
             <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-3">
               {data.title}
             </h1>
-            <Link to="/collections" className="inline-block text-white/50 text-[12px] tracking-[0.08em] hover:text-[#b8873d] transition-colors mt-2">
+            <Link to="/collections" className="inline-block text-white/50 text-[12px] tracking-[0.08em] hover:text-[#737373] transition-colors mt-2">
               ← 返回石材系列
             </Link>
           </div>
@@ -204,7 +204,7 @@ export default function CollectionDetail() {
       <section className="bg-[var(--panel)] py-20 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-14">
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">Process</span>
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Process</span>
             <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">生产工艺</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -224,7 +224,7 @@ export default function CollectionDetail() {
       {/* Full Gallery */}
       <section className="max-w-[1280px] mx-auto px-6 py-20">
         <div className="text-center mb-14">
-          <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">Gallery</span>
+          <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Gallery</span>
           <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">产品图集</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -240,7 +240,7 @@ export default function CollectionDetail() {
       <section className="bg-[var(--ink)] py-20 px-6">
         <div className="max-w-[820px] mx-auto">
           <div className="text-center mb-12">
-            <span className="text-[#b8873d] text-[11px] font-bold tracking-[0.18em] uppercase">Specifications</span>
+            <span className="text-[#737373] text-[11px] font-bold tracking-[0.18em] uppercase">Specifications</span>
             <h2 className="text-white text-[1.5rem] font-black tracking-[0.03em] mt-2">规格参数</h2>
           </div>
           <div className="bg-[var(--ink-soft)] border border-white/6">
@@ -260,7 +260,7 @@ export default function CollectionDetail() {
           <div className="text-center mt-10">
             <Link
               to="/contact"
-              className="inline-block px-10 py-3.5 bg-[#b8873d] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#d4a64a] transition-colors"
+              className="inline-block px-10 py-3.5 bg-[#737373] text-[#111] text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#a3a3a3] transition-colors"
             >
               咨询该系列
             </Link>

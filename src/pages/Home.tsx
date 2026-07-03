@@ -131,7 +131,7 @@ export default function Home() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#34c759]/55" />
+        <div className="absolute inset-0 bg-black/45" />
         <div className="relative z-10 text-center px-6">
           <p className="text-white/85 text-[clamp(1.1rem,2vw,1.5rem)] font-light italic tracking-[0.04em] leading-relaxed max-w-[700px]">
             "大自然没有两张相同的石材纹理,<br/>正如没有两段相同的人生。"
@@ -267,7 +267,7 @@ export default function Home() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-[#34c759]/50" />
+        <div className="absolute inset-0 bg-black/45" />
         <div className="relative z-10 text-center px-6">
           <h2 className="text-white text-[clamp(1.5rem,2.8vw,2.3rem)] font-black tracking-[0.03em] mb-4">
             让石材成为空间的主角

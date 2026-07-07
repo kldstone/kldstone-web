@@ -77,7 +77,7 @@ export default function CustomService() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[420px] bg-[#e5e5e5] overflow-hidden">
         <img
-          src="/ai-replacements/hotel-reception.jpg"
+          src="/brand-gallery/008-spaces-img-1200.jpg"
           alt=""
           className="w-full h-full object-cover opacity-65"
         />

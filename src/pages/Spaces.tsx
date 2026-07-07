@@ -3,38 +3,37 @@ import { Link } from "react-router-dom";
 
 const spacesData: Record<string, string[]> = {
   "酒店大堂": [
-    "/brand-gallery/001-spaces-img-1428.jpg",
-    "/brand-gallery/002-spaces-img-1410.jpg",
-    "/brand-gallery/003-spaces-img-1397.jpg",
-    "/brand-gallery/004-spaces-img-1404.jpg",
-    "/brand-gallery/005-spaces-img-1369.jpg",
-    "/brand-gallery/006-spaces-img-2607.jpg",
-    "/brand-gallery/007-spaces-img-1429.jpg",
+    "/brand-gallery/spaces-lobby-01.jpg",
+    "/brand-gallery/spaces-lobby-02.jpg",
+    "/brand-gallery/spaces-lobby-04.jpg",
+    "/brand-gallery/spaces-lobby-05.jpg",
+    "/brand-gallery/spaces-lobby-06.jpg",
+    "/brand-gallery/spaces-lobby-07.jpg",
+    "/brand-gallery/spaces-lobby-08.jpg",
+    "/brand-gallery/spaces-lobby-09.jpg",
   ],
   "别墅会所": [
-    "/brand-gallery/008-spaces-img-1200.jpg",
-    "/brand-gallery/009-spaces-img-1259.jpg",
-    "/brand-gallery/010-spaces-img-1256.jpg",
-    "/brand-gallery/011-spaces-img-1201.jpg",
-    "/brand-gallery/012-spaces-img-2531.jpg",
-    "/brand-gallery/013-spaces-img-1398.jpg",
-    "/brand-gallery/014-spaces-img-2524.jpg",
+    "/brand-gallery/spaces-villa-01.jpg",
+    "/brand-gallery/spaces-villa-02.jpg",
+    "/brand-gallery/spaces-villa-03.jpg",
+    "/brand-gallery/spaces-villa-04.jpg",
+    "/brand-gallery/spaces-villa-05.jpg",
+    "/brand-gallery/spaces-villa-06.jpg",
+    "/brand-gallery/spaces-villa-07.jpg",
+    "/brand-gallery/spaces-villa-08.jpg",
+    "/brand-gallery/spaces-villa-09.jpg",
   ],
   "商业空间": [
-    "/brand-gallery/015-spaces-img-1456.jpg",
-    "/brand-gallery/016-spaces-img-2534.jpg",
-    "/brand-gallery/017-spaces-img-1450.jpg",
-    "/brand-gallery/018-spaces-img-2535.jpg",
-    "/brand-gallery/019-spaces-img-1409.jpg",
-    "/brand-gallery/020-spaces-img-1202.jpg",
+    "/brand-gallery/spaces-commercial-01.jpg",
+    "/brand-gallery/spaces-commercial-02.jpg",
   ],
   "住宅应用": [
-    "/brand-gallery/021-spaces-img-1260.jpg",
-    "/brand-gallery/022-spaces-img-1430.jpg",
-    "/brand-gallery/023-spaces-img-1217.jpg",
-    "/brand-gallery/024-spaces-img-1258.jpg",
-    "/brand-gallery/025-spaces-img-1199.jpg",
-    "/brand-gallery/026-spaces-img-1283.jpg",
+    "/brand-gallery/spaces-residential-01.jpg",
+    "/brand-gallery/spaces-residential-02.jpg",
+    "/brand-gallery/spaces-residential-03.jpg",
+    "/brand-gallery/spaces-residential-04.jpg",
+    "/brand-gallery/spaces-residential-05.jpg",
+    "/brand-gallery/spaces-residential-06.jpg",
   ],
 };
 
@@ -60,15 +59,25 @@ export default function Spaces() {
 
   return (
     <div>
-      {/* Page Header */}
-      <section className="bg-[#f8f8f8] py-20 px-6 text-center border-b border-black/8">
-        <span className="text-[#111111] text-[11px] font-bold tracking-[0.20em] uppercase">Our Spaces</span>
-        <h1 className="text-[#111111] text-[clamp(1.8rem,3.5vw,2.8rem)] font-black tracking-[0.03em] mt-3 mb-4">
-          空间作品
-        </h1>
-        <p className="text-[#111111]/50 text-[15px] max-w-[600px] mx-auto leading-relaxed">
-          石材的最终归宿，不是仓库，而是空间。以下是我们参与的项目实景——酒店、别墅、商业空间，石材都在那里安静地发光。
-        </p>
+      {/* Page Header / Hero */}
+      <section className="relative h-[55vh] min-h-[420px] bg-[#0f0f0f] overflow-hidden">
+        <img
+          src="/brand-gallery/spaces-hero-2026-07-06.jpg"
+          alt="空间作品"
+          className="w-full h-full object-cover opacity-75"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-center text-center px-6">
+          <div>
+            <span className="text-white text-[11px] font-bold tracking-[0.20em] uppercase">Our Spaces</span>
+            <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.03em] mt-3 mb-4">
+              空间作品
+            </h1>
+            <p className="text-white/65 text-[15px] max-w-[600px] mx-auto leading-relaxed">
+              石材的最终归宿，不是仓库，而是空间。以下是我们参与的项目实景——酒店、别墅、商业空间，石材都在那里安静地发光。
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Category Filter */}
@@ -101,7 +110,7 @@ export default function Spaces() {
           {filteredSpaces.map((src, i) => (
             <div
               key={i}
-              className="break-inside-avoid overflow-hidden group cursor-pointer"
+              className="relative break-inside-avoid overflow-hidden group cursor-pointer"
               onClick={() => setLightbox(src)}
             >
               <img

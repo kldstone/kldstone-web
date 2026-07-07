@@ -4,20 +4,12 @@ export default function About() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[55vh] min-h-[420px] bg-[#e5e5e5] overflow-hidden">
-        <img src="/brand-gallery/094-heritage-img-1719.jpg" alt="" className="w-full h-full object-cover opacity-70" />
-        <div className="absolute inset-0 bg-black/45" />
-        <div className="absolute inset-0 flex items-center justify-center text-center px-6">
-          <div>
-            <span className="text-[#111111] text-[11px] font-bold tracking-[0.20em] uppercase">About KLD</span>
-            <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-4">
-              关于康利德
-            </h1>
-            <p className="text-white/55 text-[15px] max-w-[560px] mx-auto leading-relaxed">
-              福建省南安康利德石材有限公司，扎根"中国石材之乡"南安水头，让天然石材走向世界。
-            </p>
-          </div>
-        </div>
+      <section className="relative bg-[#0f0f0f] overflow-hidden">
+        <img
+          src="/brand-gallery/about-hero-2026-07-06-v2.jpg"
+          alt="关于康利德"
+          className="w-full h-auto max-h-[80vh] object-contain"
+        />
       </section>
 
       {/* Brand Story */}
@@ -60,13 +52,13 @@ export default function About() {
             >
               <div className="mb-5 overflow-hidden">
                 <img
-                  src="/brand-gallery/091-heritage-img-2395.jpg"
-                  alt="工艺匠心"
+                  src="/brand-gallery/about-card-craftsmanship-2026-07-06.jpg"
+                  alt="工厂品鉴"
                   className="w-full aspect-[4/3] object-cover img-hover"
                 />
               </div>
               <h3 className="text-[var(--ink)] text-[16px] font-bold tracking-[0.04em] mb-2">
-                工艺匠心
+                工厂品鉴
               </h3>
               <p className="text-[var(--muted)] text-[13px] leading-[1.7] mb-4">
                 从荒料到精品，十四道工序。大理石切割、水刀拼花、CNC异形加工——每一种工艺背后都是一个关于专注的故事。
@@ -83,7 +75,7 @@ export default function About() {
             >
               <div className="mb-5 overflow-hidden">
                 <img
-                  src="/brand-gallery/074-inspection-img-2156.jpg"
+                  src="/brand-gallery/about-card-quality-2026-07-06.jpg"
                   alt="品质保障"
                   className="w-full aspect-[4/3] object-cover img-hover"
                 />
@@ -106,7 +98,7 @@ export default function About() {
             >
               <div className="mb-5 overflow-hidden">
                 <img
-                  src="/brand-gallery/108-exhibition-img-0916.jpg"
+                  src="/brand-gallery/about-card-custom-2026-07-06.jpg"
                   alt="定制服务"
                   className="w-full aspect-[4/3] object-cover img-hover"
                 />
@@ -129,7 +121,7 @@ export default function About() {
       <section className="py-20 px-6 max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="overflow-hidden img-hover">
-            <img src="/brand-gallery/108-exhibition-img-0916.jpg" alt="展会" className="w-full aspect-[4/3] object-cover" />
+            <img src="/brand-gallery/about-exhibition-2026-07-06.jpg" alt="展会" className="w-full aspect-[4/3] object-cover" />
           </div>
           <div>
             <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">Exhibition</span>

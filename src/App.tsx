@@ -17,7 +17,9 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/collections" element={<Collections />} />
-          <Route path="/collections/:slug" element={<CollectionDetail />} />
+          <Route path="/collections/marble" element={<Collections filter="marble" />} />
+          <Route path="/collections/mosaic" element={<Collections filter="mosaic" />} />
+          <Route path="/collections/product/:id" element={<CollectionDetail />} />
           <Route path="/spaces" element={<Spaces />} />
           <Route path="/custom" element={<CustomService />} />
           <Route path="/craftsmanship" element={<Craftsmanship />} />

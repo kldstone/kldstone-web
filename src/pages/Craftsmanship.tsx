@@ -1,231 +1,265 @@
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 
-const heritageImgs = [
-  "/brand-gallery/091-heritage-img-2395.jpg",
-  "/brand-gallery/092-heritage-img-2221.jpg",
-  "/brand-gallery/093-heritage-img-2222.jpg",
-  "/brand-gallery/094-heritage-img-1719.jpg",
-  "/brand-gallery/095-heritage-img-1761.jpg",
-  "/brand-gallery/096-heritage-img-2153.jpg",
-  "/brand-gallery/097-heritage-img-2305.jpg",
-  "/brand-gallery/098-heritage-img-2430.jpg",
-  "/brand-gallery/099-heritage-img-2404.jpg",
-  "/brand-gallery/100-heritage-img-2392.jpg",
-  "/brand-gallery/101-heritage-img-1733.jpg",
-  "/brand-gallery/102-heritage-img-1743.jpg",
-  "/brand-gallery/103-heritage-img-1745.jpg",
-  "/brand-gallery/104-heritage-img-2401.jpg",
+/* 全部工厂实景图片（36张） */
+const allPhotos = Array.from({ length: 34 }, (_, i) => ({
+  src: `/brand-gallery/factory/factory-${String(i + 1).padStart(2, "0")}.jpg`,
+  label: `实景 ${String(i + 1).padStart(2, "0")}`,
+}));
+
+/* 核心数据 */
+const stats = [
+  { num: "20+", label: "年行业沉淀", sub: "从荒料贸易到精加工" },
+  { num: "149", label: "款大理石品种", sub: "现货大板常备" },
+  { num: "±0.1mm", label: "水刀切割精度", sub: "双系统 · 全程数控" },
+  { num: "6", label: "道出厂质检", sub: "色差 / 厚度 / 防护" },
 ];
 
-const craftFields = [
+/* 工厂配置清单 */
+const facilities = [
   {
-    title: "大理石大板加工",
-    sub: "The Art of Slab",
-    desc: "从荒料到大板，第一刀决定了石材的最终表现。我们采用金刚石框架锯和砂锯双系统——前者确保高效开料，后者保留石材天然纹理的完整性。板材出产前经过自动磨机六面抛光，光泽度稳定在 90° 以上。每一片大板都会被编号归档，记录其矿山来源、批次、色号——这是我们的石材身份证系统。",
-    images: [
-      "/brand-gallery/027-materials-img-2084.jpg",
-      "/brand-gallery/030-materials-img-1919.jpg",
-      "/brand-gallery/033-materials-img-2039.jpg",
-    ],
-    path: "/collections/marble",
+    title: "大理石大板线",
+    desc: "金刚石框架锯 + 砂锯双系统，自动磨机六面抛光，光泽度稳定 90° 以上。每片大板编号归档，记录矿山来源、批次、色号——石材身份证系统。",
   },
   {
-    title: "水刀拼花",
-    sub: "Waterjet Mosaic",
-    desc: "水刀拼花是石材加工领域中最接近艺术创作的工艺。高压水流携带磨料，以每秒 800 米的速度穿透石材，切割精度达到 ±0.1mm。不同颜色、种类的石材被精确切割成设计好的形状，再像拼图般镶嵌组合。从古典欧式卷草纹到现代几何抽象，我们的水刀拼花团队由十年以上经验的工匠带领。每一件拼花作品出厂前都按图纸 1:1 预拼验收——在石头被镶嵌到您的空间之前，它已经在我们这里被完整地拼接了一次。",
-    images: [
-      "/brand-gallery/080-details-img-1663.jpg",
-      "/brand-gallery/081-details-img-1541.jpg",
-      "/brand-gallery/083-details-img-1566.jpg",
-    ],
-    path: "/collections/mosaic",
+    title: "水刀拼花中心",
+    desc: "高压水流携带磨料，每秒 800 米穿透石材，切割精度 ±0.1mm。十年以上经验工匠带队，出厂前按图纸 1:1 预拼验收。",
   },
   {
-    title: "石材家具与摆件",
-    sub: "Stone Furniture",
-    desc: "石材家具的魅力在于它同时具备重量感和精致感。一张大理石茶几需要经过板材选料、CNC 异形切割、边缘倒角打磨、底部加肋加固、表面渗透防护处理等十几道工序。我们避免使用任何贴面或仿石材材质——这里的每一件家具，都是整块天然石材经过减法工艺后的结果。台灯下的透光纹理、指尖触到的天然温度——这些都不是「设计」出来的，而是大理石本身就是如此。",
-    images: [
-      "/brand-gallery/090-details-img-1224.jpg",
-      "/brand-gallery/087-details-img-1246.jpg",
-      "/brand-gallery/089-details-img-1240.jpg",
-    ],
-    path: "/collections/furniture",
+    title: "CNC 异形加工",
+    desc: "数控雕刻、异型线条、罗马柱、雕花柱头——从设计图纸到成品一站式交付，复杂造型不再依赖手工试错。",
   },
-];
-
-const detailImages = [
-  "/brand-gallery/077-details-img-1497.jpg",
-  "/brand-gallery/078-details-img-1664.jpg",
-  "/brand-gallery/079-details-img-1573.jpg",
-  "/brand-gallery/082-details-img-1539.jpg",
-  "/brand-gallery/084-details-img-1540.jpg",
-  "/brand-gallery/086-details-img-1236.jpg",
-  "/brand-gallery/088-details-img-1249.jpg",
-  "/brand-gallery/090-details-img-1224.jpg",
+  {
+    title: "品质管控中心",
+    desc: "色差管控、厚度检测、六面检查、防护处理——品质不是在客户面前表演，而是在没人看的时候依然做对的事。",
+  },
 ];
 
 export default function Craftsmanship() {
+  const [lightbox, setLightbox] = useState<number | null>(null);
+
+  const closeLightbox = useCallback(() => setLightbox(null), []);
+  const prevPhoto = useCallback(
+    () => setLightbox((p) => (p === null ? null : (p - 1 + allPhotos.length) % allPhotos.length)),
+    []
+  );
+  const nextPhoto = useCallback(
+    () => setLightbox((p) => (p === null ? null : (p + 1) % allPhotos.length)),
+    []
+  );
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prevPhoto();
+      if (e.key === "ArrowRight") nextPhoto();
+    };
+    window.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [lightbox, closeLightbox, prevPhoto, nextPhoto]);
+
   return (
     <div>
       {/* Hero */}
-      <section className="relative h-[55vh] min-h-[420px] bg-[#e5e5e5] overflow-hidden">
+      <section className="relative h-[55vh] min-h-[420px] bg-[#0f0f0f] overflow-hidden">
         <img
-          src="/brand-gallery/100-heritage-img-2392.jpg"
+          src="/brand-gallery/craftsmanship-hero-2026-07-06.jpg"
           alt=""
-          className="w-full h-full object-cover opacity-65"
+          className="w-full h-full object-cover object-top opacity-80"
         />
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
-            <span className="text-[#111111] text-[11px] font-bold tracking-[0.20em] uppercase">
-              Craftsmanship
+            <span className="text-white text-[11px] font-bold tracking-[0.20em] uppercase">
+              Factory Tour
             </span>
             <h1 className="text-white text-[clamp(1.8rem,4vw,3rem)] font-black tracking-[0.02em] mt-3 mb-4">
-              工艺匠心
+              工厂品鉴
             </h1>
-            <p className="text-white/55 text-[15px] max-w-[560px] mx-auto leading-relaxed">
-              工具在变，但对石头的敬畏不变。从矿山到空间，每一步都被认真对待。
+            <p className="text-white/65 text-[15px] max-w-[560px] mx-auto leading-relaxed">
+              扎根中国石材之乡南安水头，从荒料到大板、从切割到拼花——欢迎实地走进康利德的工厂。
             </p>
           </div>
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="max-w-[900px] mx-auto px-6 py-20 text-center">
-        <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
-          Philosophy
-        </span>
-        <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mb-5">
-          石头不会说谎，手艺人也不应该
-        </h2>
-        <p className="text-[var(--muted)] text-[15px] leading-[1.9] max-w-[680px] mx-auto">
-          在南安水头，石材行业有一条不成文的规矩——"刀下有分寸"。意思是说，每一刀切下去的位置、角度、深度，都决定了一块石材最终能释放多少美，也暴露了一个手艺人的道行深浅。康利德的工匠团队中，有做了半辈子大理石的老师傅，也有数控编程比年轻人还熟练的老厂长。设备更新得很快，但经验是无法被替代的。在精确到毫米的机械语言与依靠直觉的天然材料之间，我们说一种共同的语言：对"做好"的执念。
-        </p>
+      {/* 工厂概况 - 数据展示 */}
+      <section className="max-w-[1280px] mx-auto px-6 py-20">
+        <div className="text-center mb-14">
+          <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
+            Overview
+          </span>
+          <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mb-4">
+            一座长在石头上的工厂
+          </h2>
+          <p className="text-[var(--muted)] text-[15px] leading-[1.9] max-w-[680px] mx-auto">
+            南安水头——这个名字在中国石材行业就是一个商标级别的存在。康利德不是一家"成立"的公司，而是一家在石材中"长大"的公司。从十几岁触碰石头的创始人，到今天拥有完整大板线、水刀拼花中心、CNC异形加工和品质管控车间的综合工厂，我们用二十多年把对石头的理解转化为对客户的交付。
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {stats.map((s, i) => (
+            <div key={i} className="text-center py-8 border-t border-[var(--line)]">
+              <div className="text-[#34c759] text-[clamp(2rem,4vw,2.8rem)] font-black tracking-[0.02em] mb-2">
+                {s.num}
+              </div>
+              <div className="text-[var(--ink)] text-[14px] font-bold tracking-[0.04em] mb-1">
+                {s.label}
+              </div>
+              <div className="text-[var(--muted)] text-[12px] leading-relaxed">
+                {s.sub}
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* Heritage Gallery */}
+      {/* 工厂实景图集 - 全部37张 */}
       <section className="bg-[var(--panel)] py-20 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-14">
             <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">
-              匠艺传承
+              On Site
             </span>
-            <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2">
-              从荒料到精品
+            <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2 mb-3">
+              走进车间
             </h2>
-            <p className="text-[var(--muted)] text-[14px] mt-3 max-w-[500px] mx-auto leading-relaxed">
-              十四张图，十四道工序。不是流程展示，是一块石头走向它最终形态的路径。
+            <p className="text-[var(--muted)] text-[14px] max-w-[500px] mx-auto leading-relaxed">
+              从荒料堆场到成品发货，每一张都是工厂的真实切面。点击图片可放大查看。
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-2">
-            {heritageImgs.map((src, i) => (
-              <div key={i} className="overflow-hidden img-hover">
+
+          {/* Masonry 瀑布流 */}
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-3 [&>*]:mb-3">
+            {allPhotos.map((photo, i) => (
+              <div
+                key={i}
+                className="break-inside-avoid overflow-hidden group cursor-pointer relative"
+                onClick={() => setLightbox(i)}
+              >
                 <img
-                  src={src}
-                  alt={`传承 ${i + 1}`}
-                  className="w-full aspect-[4/5] object-cover"
+                  src={photo.src}
+                  alt={photo.label}
+                  className="w-full block object-cover img-hover"
                   loading="lazy"
                 />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-end p-3">
+                  <span className="text-white text-[11px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                    {photo.label}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Three Craft Fields */}
-      {craftFields.map((field, idx) => (
-        <section
-          key={field.title}
-          className={`py-20 px-6 max-w-[1280px] mx-auto ${
-            idx % 2 === 1 ? "bg-[var(--panel)] max-w-none" : ""
-          }`}
-        >
-          <div className={idx % 2 === 1 ? "max-w-[1280px] mx-auto" : ""}>
-            <div
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                idx % 2 === 1 ? "lg:[direction:rtl]" : ""
-              }`}
-            >
-              <div className={idx % 2 === 1 ? "lg:[direction:ltr]" : ""}>
-                <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">
-                  {field.sub}
-                </span>
-                <h3 className="text-[var(--ink)] text-[1.35rem] font-black tracking-[0.03em] mt-2 mb-4">
-                  {field.title}
-                </h3>
-                <p className="text-[var(--muted)] text-[14px] leading-[1.9] mb-6">
-                  {field.desc}
-                </p>
-                <Link
-                  to={field.path}
-                  className="inline-block text-[var(--ink)] text-[12px] font-bold tracking-[0.08em] border-b border-[#34c759]/20/40 pb-1 hover:text-[var(--ink)] transition-colors"
-                >
-                  了解详情 →
-                </Link>
-              </div>
-              <div
-                className={`grid grid-cols-3 gap-2 ${
-                  idx % 2 === 1 ? "lg:[direction:ltr]" : ""
-                }`}
-              >
-                {field.images.map((src, j) => (
-                  <div key={j} className="overflow-hidden img-hover">
-                    <img
-                      src={src}
-                      alt=""
-                      className="w-full aspect-[3/4] object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      ))}
-
-      {/* Detail Gallery */}
-      <section className="py-20 px-6 max-w-[1280px] mx-auto">
-        <div className="text-center mb-12">
+      {/* 工厂配置清单 */}
+      <section className="max-w-[1280px] mx-auto px-6 py-20">
+        <div className="text-center mb-14">
           <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">
-            工艺细节
+            Facilities
           </span>
-          <h2 className="text-[var(--ink)] text-[1.4rem] font-black tracking-[0.03em] mt-2">
-            毫米级的讲究
+          <h2 className="text-[var(--ink)] text-[1.5rem] font-black tracking-[0.03em] mt-2 mb-3">
+            四大核心车间
           </h2>
-          <p className="text-[var(--muted)] text-[14px] mt-3 max-w-[500px] mx-auto leading-relaxed">
-            真正的品质不在于远处看得到的光洁，而在于俯身靠近时经得起推敲的细节。
+          <p className="text-[var(--muted)] text-[14px] max-w-[560px] mx-auto leading-relaxed">
+            设备可以采购，经验无法复制。在精确到毫米的机械语言与依靠直觉的天然材料之间，我们说一种共同的语言。
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {detailImages.map((src, i) => (
-            <div key={i} className="overflow-hidden img-hover">
-              <img
-                src={src}
-                alt={`细节 ${i + 1}`}
-                className="w-full aspect-[1/1] object-cover"
-                loading="lazy"
-              />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {facilities.map((f, i) => (
+            <div
+              key={i}
+              className="p-8 bg-white border border-[var(--line)] hover:border-[#34c759]/40 transition-colors"
+            >
+              <div className="flex items-baseline gap-4 mb-4">
+                <span className="text-[#34c759] text-[1.8rem] font-black tracking-[0.02em]">
+                  0{i + 1}
+                </span>
+                <h3 className="text-[var(--ink)] text-[1.2rem] font-black tracking-[0.03em]">
+                  {f.title}
+                </h3>
+              </div>
+              <p className="text-[var(--muted)] text-[14px] leading-[1.9]">
+                {f.desc}
+              </p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#f8f8f8] py-16 px-6 text-center border-t border-black/8">
-        <h2 className="text-[#111111] text-[1.4rem] font-black tracking-[0.02em] mb-3">
-          好的工艺不需要解释
-        </h2>
-        <p className="text-[#111111]/45 text-[14px] mb-8 max-w-[460px] mx-auto leading-relaxed">
-          但如果您想亲眼看看，我们随时欢迎您到石井的工厂来。
-        </p>
-        <Link
-          to="/contact"
-          className="inline-block px-10 py-3.5 bg-[#34c759] text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#34c759]/80 transition-colors"
-        >
-          预约参观
-        </Link>
+      {/* 参观邀请 CTA */}
+      <section className="bg-[#0f0f0f] py-20 px-6 text-center">
+        <div className="max-w-[680px] mx-auto">
+          <span className="text-white/60 text-[11px] font-bold tracking-[0.18em] uppercase">
+            Visit Us
+          </span>
+          <h2 className="text-white text-[clamp(1.4rem,3vw,2rem)] font-black tracking-[0.03em] mt-3 mb-4">
+            百闻不如一见
+          </h2>
+          <p className="text-white/55 text-[15px] leading-[1.9] mb-8">
+            好的工艺不需要解释——如果您想亲眼看看，我们随时欢迎您到水头来。从厦门高崎机场出发约 40 分钟车程，我们可安排接送。
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block px-10 py-3.5 bg-[#34c759] text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#34c759]/80 transition-colors"
+          >
+            预约参观
+          </Link>
+        </div>
       </section>
+
+      {/* Lightbox 灯箱 */}
+      {lightbox !== null && (
+        <div
+          className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center"
+          onClick={closeLightbox}
+        >
+          {/* 关闭按钮 */}
+          <button
+            className="absolute top-5 right-6 text-white text-[2rem] z-10 hover:text-[#34c759] transition-colors"
+            onClick={closeLightbox}
+          >
+            &times;
+          </button>
+
+          {/* 上一张 */}
+          <button
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 text-[2rem] z-10 hover:text-white transition-colors px-3"
+            onClick={(e) => { e.stopPropagation(); prevPhoto(); }}
+          >
+            &#10094;
+          </button>
+
+          {/* 图片 */}
+          <img
+            src={allPhotos[lightbox].src}
+            alt={allPhotos[lightbox].label}
+            className="max-w-[90vw] max-h-[85vh] object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {/* 下一张 */}
+          <button
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white/70 text-[2rem] z-10 hover:text-white transition-colors px-3"
+            onClick={(e) => { e.stopPropagation(); nextPhoto(); }}
+          >
+            &#10095;
+          </button>
+
+          {/* 计数器 */}
+          <div className="absolute bottom-6 left-0 right-0 text-center text-white/60 text-[13px]">
+            {lightbox + 1} / {allPhotos.length} · {allPhotos[lightbox].label}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

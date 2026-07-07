@@ -7,7 +7,7 @@ export default function Contact() {
     <div>
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[340px] bg-[#0f0f0f] overflow-hidden">
-        <img src="/ai-replacements/client-inspection.jpg" alt="" className="w-full h-full object-cover opacity-60" />
+        <img src="/brand-gallery/contact-hero-2026-07-06-v4.jpg" alt="联系我们" className="w-full h-full object-cover opacity-80" />
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
@@ -34,10 +34,7 @@ export default function Contact() {
               <div>
                 <span className="text-[#111111] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">公司地址</span>
                 <p className="text-[#111111] text-[15px] font-semibold leading-relaxed">
-                  福建省南安市石井镇后店工业区
-                </p>
-                <p className="text-[#111111] text-[13px] mt-1">
-                  福建省南安康利德石材有限公司
+                  福建省南安市石井后店工业区
                 </p>
               </div>
 
@@ -76,7 +73,7 @@ export default function Contact() {
 
               {/* Factory image */}
               <div className="overflow-hidden img-hover">
-                <img src="/ai-replacements/slab-showroom.jpg" alt="康利德工厂" className="w-full aspect-[16/9] object-cover" />
+                <img src="/brand-gallery/contact-factory-2026-07-07.jpg" alt="康利德工厂" className="w-full aspect-[16/9] object-cover" />
               </div>
             </div>
           </div>

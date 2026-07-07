@@ -9,14 +9,10 @@ const navLinks = [
     children: [
       { label: "天然大理石", href: "/collections/marble" },
       { label: "水刀拼花", href: "/collections/mosaic" },
-      { label: "石材家具摆件", href: "/collections/furniture" },
-      { label: "石材台面定制", href: "/collections/countertop" },
     ],
   },
   { label: "空间作品", href: "/spaces" },
-  { label: "定制服务", href: "/custom" },
-  { label: "工艺匠心", href: "/craftsmanship" },
-  { label: "品质保障", href: "/quality" },
+  { label: "工厂品鉴", href: "/craftsmanship" },
   { label: "关于我们", href: "/about" },
   { label: "联系我们", href: "/contact" },
 ];
@@ -48,7 +44,7 @@ export default function Navbar() {
       {/* Top info bar */}
       <div className="w-full bg-white border-b border-black/5 text-[#111111]/50 text-[12px] tracking-[0.04em]">
         <div className="max-w-[1280px] mx-auto px-6 flex items-center justify-between min-h-[34px]">
-          <span className="truncate">天然大理石 · 水刀拼花 · 石材工艺品 · 福建南安石井</span>
+          <span className="truncate">天然大理石 · 水刀拼花 · 石材工艺品 · 中国◆水头</span>
           <span className="hidden sm:flex items-center gap-4 ml-4 shrink-0">
             <a href="tel:+8615659069988" className="hover:text-[#34c759] transition-colors">+86 156 5906 9988</a>
             <span className="text-black/20">|</span>

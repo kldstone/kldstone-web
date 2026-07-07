@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import SEO from "./SEO";
 
 export default function Layout() {
   const location = useLocation();
@@ -12,6 +13,7 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO />
       <Navbar />
       <main className="flex-1">
         <Outlet />

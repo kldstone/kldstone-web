@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { optimizedImage } from "@/lib/images";
 
 /* 全部工厂实景图片（36张） */
 const allPhotos = Array.from({ length: 34 }, (_, i) => ({
@@ -68,7 +69,7 @@ export default function Craftsmanship() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[420px] bg-[#0f0f0f] overflow-hidden">
         <img
-          src="/brand-gallery/craftsmanship-hero-2026-07-06.jpg"
+          src={optimizedImage("/brand-gallery/craftsmanship-hero-2026-07-06.jpg")}
           alt=""
           className="w-full h-full object-cover object-top opacity-80"
         />
@@ -143,10 +144,10 @@ export default function Craftsmanship() {
                 onClick={() => setLightbox(i)}
               >
                 <img
-                  src={photo.src}
+                  src={optimizedImage(photo.src)}
                   alt={photo.label}
                   className="w-full block object-cover img-hover"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-end p-3">
                   <span className="text-white text-[11px] font-bold opacity-0 group-hover:opacity-100 transition-opacity">
@@ -240,7 +241,7 @@ export default function Craftsmanship() {
 
           {/* 图片 */}
           <img
-            src={allPhotos[lightbox].src}
+            src={optimizedImage(allPhotos[lightbox].src)}
             alt={allPhotos[lightbox].label}
             className="max-w-[90vw] max-h-[85vh] object-contain"
             onClick={(e) => e.stopPropagation()}

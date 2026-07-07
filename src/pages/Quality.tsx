@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { optimizedImage } from "@/lib/images";
 
 const inspectionImgs = [
   "/brand-gallery/071-inspection-img-1921.jpg",
@@ -69,7 +70,7 @@ export default function Quality() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[420px] bg-[#e5e5e5] overflow-hidden">
         <img
-          src="/brand-gallery/076-inspection-img-2504.jpg"
+          src={optimizedImage("/brand-gallery/076-inspection-img-2504.jpg")}
           alt=""
           className="w-full h-full object-cover opacity-65"
         />
@@ -119,10 +120,10 @@ export default function Quality() {
             {inspectionImgs.map((src, i) => (
               <div key={i} className="overflow-hidden img-hover">
                 <img
-                  src={src}
+                  src={optimizedImage(src)}
                   alt={`质检 ${i + 1}`}
                   className="w-full aspect-[4/3] object-cover"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                 />
               </div>
             ))}
@@ -170,10 +171,10 @@ export default function Quality() {
           >
             <div className={`overflow-hidden ${i % 2 === 1 ? "lg:[direction:ltr]" : ""}`}>
               <img
-                src={step.img}
+                src={optimizedImage(step.img)}
                 alt={step.title}
                 className="w-full aspect-[4/3] object-cover img-hover"
-                loading="lazy"
+                loading="lazy" decoding="async"
               />
             </div>
             <div className={i % 2 === 1 ? "lg:[direction:ltr]" : ""}>
@@ -206,10 +207,10 @@ export default function Quality() {
             {deliveryImgs.map((src, i) => (
               <div key={i} className="overflow-hidden img-hover">
                 <img
-                  src={src}
+                  src={optimizedImage(src)}
                   alt={`包装 ${i + 1}`}
                   className="w-full aspect-[4/3] object-cover"
-                  loading="lazy"
+                  loading="lazy" decoding="async"
                 />
               </div>
             ))}

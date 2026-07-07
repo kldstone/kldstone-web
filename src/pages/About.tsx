@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { optimizedImage } from "@/lib/images";
 
 export default function About() {
   return (
@@ -6,7 +7,7 @@ export default function About() {
       {/* Hero */}
       <section className="relative bg-[#0f0f0f] overflow-hidden">
         <img
-          src="/brand-gallery/about-hero-2026-07-06-v2.jpg"
+          src={optimizedImage("/brand-gallery/about-hero-2026-07-06-v2.jpg")}
           alt="关于康利德"
           className="w-full h-auto max-h-[80vh] object-contain"
         />
@@ -52,7 +53,7 @@ export default function About() {
             >
               <div className="mb-5 overflow-hidden">
                 <img
-                  src="/brand-gallery/about-card-craftsmanship-2026-07-06.jpg"
+                  src={optimizedImage("/brand-gallery/about-card-craftsmanship-2026-07-06.jpg")}
                   alt="工厂品鉴"
                   className="w-full aspect-[4/3] object-cover img-hover"
                 />
@@ -75,7 +76,7 @@ export default function About() {
             >
               <div className="mb-5 overflow-hidden">
                 <img
-                  src="/brand-gallery/about-card-quality-2026-07-06.jpg"
+                  src={optimizedImage("/brand-gallery/about-card-quality-2026-07-06.jpg")}
                   alt="品质保障"
                   className="w-full aspect-[4/3] object-cover img-hover"
                 />
@@ -98,7 +99,7 @@ export default function About() {
             >
               <div className="mb-5 overflow-hidden">
                 <img
-                  src="/brand-gallery/about-card-custom-2026-07-06.jpg"
+                  src={optimizedImage("/brand-gallery/about-card-custom-2026-07-06.jpg")}
                   alt="定制服务"
                   className="w-full aspect-[4/3] object-cover img-hover"
                 />
@@ -121,7 +122,7 @@ export default function About() {
       <section className="py-20 px-6 max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="overflow-hidden img-hover">
-            <img src="/brand-gallery/about-exhibition-2026-07-06.jpg" alt="展会" className="w-full aspect-[4/3] object-cover" />
+            <img src={optimizedImage("/brand-gallery/about-exhibition-2026-07-06.jpg")} alt="展会" className="w-full aspect-[4/3] object-cover" />
           </div>
           <div>
             <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase">Exhibition</span>

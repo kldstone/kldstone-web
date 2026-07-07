@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { optimizedImage } from "@/lib/images";
 
 // ============================================================
 // 产品一览：gani.com.cn 风格
@@ -216,7 +217,7 @@ export default function Collections({ filter }: CollectionsProps) {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[420px] bg-[#e5e5e5] overflow-hidden">
         <img
-          src="/brand-gallery/2025_12_05_14_26_IMG_0505.jpg"
+          src={optimizedImage("/brand-gallery/2025_12_05_14_26_IMG_0505.jpg")}
           alt="水头石材产业基地"
           className="w-full h-full object-cover"
         />
@@ -274,9 +275,9 @@ export default function Collections({ filter }: CollectionsProps) {
               className="group relative block overflow-hidden bg-[#f5f5f5] aspect-[3/4]"
             >
               <img
-                src={p.img}
+                src={optimizedImage(p.img)}
                 alt={p.name}
-                loading="lazy"
+                loading="lazy" decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* 左下角半透明黑蒙层 + 白字 */}

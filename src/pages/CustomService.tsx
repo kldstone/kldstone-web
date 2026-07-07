@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { optimizedImage } from "@/lib/images";
 
 const serviceSteps = [
   {
@@ -77,7 +78,7 @@ export default function CustomService() {
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[420px] bg-[#e5e5e5] overflow-hidden">
         <img
-          src="/brand-gallery/008-spaces-img-1200.jpg"
+          src={optimizedImage("/brand-gallery/008-spaces-img-1200.jpg")}
           alt=""
           className="w-full h-full object-cover opacity-65"
         />
@@ -134,10 +135,10 @@ export default function CustomService() {
                 </div>
                 <div className={`overflow-hidden ${i % 2 === 1 ? "lg:[direction:ltr]" : ""}`}>
                   <img
-                    src={step.img}
+                    src={optimizedImage(step.img)}
                     alt={step.title}
                     className="w-full aspect-[4/3] object-cover img-hover"
-                    loading="lazy"
+                    loading="lazy" decoding="async"
                   />
                 </div>
               </div>
@@ -163,10 +164,10 @@ export default function CustomService() {
           {processImages.map((src, i) => (
             <div key={i} className="overflow-hidden img-hover">
               <img
-                src={src}
+                src={optimizedImage(src)}
                 alt={`工序 ${i + 1}`}
                 className="w-full aspect-[4/3] object-cover"
-                loading="lazy"
+                loading="lazy" decoding="async"
               />
             </div>
           ))}

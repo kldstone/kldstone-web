@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { optimizedImage } from "@/lib/images";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -7,7 +8,7 @@ export default function Contact() {
     <div>
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[340px] bg-[#0f0f0f] overflow-hidden">
-        <img src="/brand-gallery/contact-hero-2026-07-06-v4.jpg" alt="联系我们" className="w-full h-full object-cover opacity-80" />
+        <img src={optimizedImage("/brand-gallery/contact-hero-2026-07-06-v4.jpg")} alt="联系我们" className="w-full h-full object-cover opacity-80" />
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
@@ -73,7 +74,7 @@ export default function Contact() {
 
               {/* Factory image */}
               <div className="overflow-hidden img-hover">
-                <img src="/brand-gallery/contact-factory-2026-07-07.jpg" alt="康利德工厂" className="w-full aspect-[16/9] object-cover" />
+                <img src={optimizedImage("/brand-gallery/contact-factory-2026-07-07.jpg")} alt="康利德工厂" className="w-full aspect-[16/9] object-cover" />
               </div>
             </div>
           </div>

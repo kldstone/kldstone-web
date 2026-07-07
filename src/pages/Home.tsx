@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { optimizedImage } from "@/lib/images";
 
 // ============================================================
 // 首页 — gani.com.cn 风格
@@ -86,7 +87,7 @@ export default function Home() {
       {slides.map((s, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-all duration-[1200ms] ease-out ${
+          className={`absolute inset-0 transition-all duration-1000 ease-out ${
             i === active
               ? "opacity-100 scale-100"
               : "opacity-0 scale-105 pointer-events-none"
@@ -94,8 +95,11 @@ export default function Home() {
         >
           <Link to={s.href} className="block w-full h-full relative">
             <img
-              src={s.img}
+              src={optimizedImage(s.img)}
               alt={s.tit}
+              loading={i === 0 ? "eager" : "lazy"}
+              fetchPriority={i === 0 ? "high" : "low"}
+              decoding={i === 0 ? "sync" : "async"}
               className="w-full h-full object-cover"
               style={{
                 transform: i === active ? "scale(1)" : "scale(1.08)",

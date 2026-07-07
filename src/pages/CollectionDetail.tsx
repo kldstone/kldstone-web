@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { optimizedImage } from "@/lib/images";
 
 // ============================================================
 // 产品详情页
@@ -1234,7 +1235,7 @@ export default function CollectionDetail() {
     <div className="bg-white">
       {/* Hero */}
       <section className="relative h-[55vh] min-h-[400px] bg-[#e5e5e5] overflow-hidden">
-        <img src={data.heroImg} alt="" className="w-full h-full object-cover opacity-80" />
+        <img src={optimizedImage(data.heroImg)} alt="" className="w-full h-full object-cover opacity-80" />
         <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>
@@ -1274,7 +1275,7 @@ export default function CollectionDetail() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
           {data.gallery.map((src, i) => (
             <div key={i} className="overflow-hidden img-hover cursor-pointer">
-              <img src={src} alt="" className="w-full aspect-[4/3] object-cover" />
+              <img src={optimizedImage(src)} alt="" className="w-full aspect-[4/3] object-cover" />
             </div>
           ))}
         </div>

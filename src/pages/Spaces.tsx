@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { optimizedImage } from "@/lib/images";
 
 const spacesData: Record<string, string[]> = {
   "酒店大堂": [
@@ -62,7 +63,7 @@ export default function Spaces() {
       {/* Page Header / Hero */}
       <section className="relative h-[55vh] min-h-[420px] bg-[#0f0f0f] overflow-hidden">
         <img
-          src="/brand-gallery/spaces-hero-2026-07-06.jpg"
+          src={optimizedImage("/brand-gallery/spaces-hero-2026-07-06.jpg")}
           alt="空间作品"
           className="w-full h-full object-cover opacity-75"
         />
@@ -114,10 +115,10 @@ export default function Spaces() {
               onClick={() => setLightbox(src)}
             >
               <img
-                src={src}
+                src={optimizedImage(src)}
                 alt={`空间作品 ${i + 1}`}
                 className="w-full object-cover transition-all duration-700 group-hover:scale-[1.03]"
-                loading="lazy"
+                loading="lazy" decoding="async"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-all duration-500" />
             </div>
@@ -138,7 +139,7 @@ export default function Spaces() {
             ✕
           </button>
           <img
-            src={lightbox}
+            src={optimizedImage(lightbox)}
             alt=""
             className="max-w-full max-h-[88vh] object-contain cursor-default"
             onClick={(e) => e.stopPropagation()}

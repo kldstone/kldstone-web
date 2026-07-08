@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { trackConversion } from "@/lib/analytics";
 
 const navLinks = [
   { label: "首页", href: "/" },
@@ -140,6 +141,7 @@ export default function Navbar() {
           {/* CTA */}
           <Link
             to="/contact"
+            onClick={() => trackConversion("quote_cta", { source: "navbar" })}
             className="hidden md:inline-flex items-center justify-center min-h-[40px] px-5 bg-[#34c759] text-white text-[12px] font-bold tracking-[0.06em] hover:bg-[#34c759]/80 transition-colors whitespace-nowrap shrink-0"
           >
             获取报价
@@ -189,6 +191,7 @@ export default function Navbar() {
             ))}
             <Link
               to="/contact"
+              onClick={() => trackConversion("quote_cta", { source: "navbar_mobile" })}
               className="mt-3 block text-center bg-[#34c759] text-white py-3 text-[12px] font-bold tracking-[0.06em]"
             >
               获取报价

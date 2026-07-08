@@ -4,12 +4,17 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import MobileStickyCTA from "./MobileStickyCTA";
 import SEO from "./SEO";
+import { trackPageview } from "@/lib/analytics";
 
 export default function Layout() {
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
+
+  useEffect(() => {
+    trackPageview(location.pathname);
   }, [location.pathname]);
 
   return (

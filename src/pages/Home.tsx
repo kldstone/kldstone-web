@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { optimizedImage } from "@/lib/images";
+import { trackConversion } from "@/lib/analytics";
 
 // ============================================================
 // 首页 — 转化优化版
@@ -286,6 +287,7 @@ export default function Home() {
         <div className="text-center">
           <Link
             to="/collections"
+            onClick={() => trackConversion("cta_click", { source: "home_marble_all" })}
             className="inline-flex items-center gap-2 text-[#111111] text-[12px] font-bold tracking-[0.10em] uppercase border-b-2 border-[#34c759] pb-1 hover:text-[#34c759] transition-colors"
           >
             查看全部产品系列
@@ -336,6 +338,7 @@ export default function Home() {
           <div className="text-center">
             <Link
               to="/collections/mosaic"
+              onClick={() => trackConversion("cta_click", { source: "home_mosaic_all" })}
               className="inline-flex items-center gap-2 text-[#111111] text-[12px] font-bold tracking-[0.10em] uppercase border-b-2 border-[#34c759] pb-1 hover:text-[#34c759] transition-colors"
             >
               查看全部水刀拼花
@@ -389,6 +392,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               to="/craftsmanship"
+              onClick={() => trackConversion("cta_click", { source: "home_factory_tour" })}
               className="inline-flex items-center gap-2 text-[#111111] text-[12px] font-bold tracking-[0.10em] uppercase border-b-2 border-[#34c759] pb-1 hover:text-[#34c759] transition-colors"
             >
               走进工厂车间
@@ -439,6 +443,7 @@ export default function Home() {
           <div className="text-center">
             <Link
               to="/spaces"
+              onClick={() => trackConversion("cta_click", { source: "home_spaces_all" })}
               className="inline-flex items-center gap-2 text-white text-[12px] font-bold tracking-[0.10em] uppercase border-b-2 border-[#34c759] pb-1 hover:text-[#34c759] transition-colors"
             >
               查看全部空间案例
@@ -492,6 +497,7 @@ export default function Home() {
               </div>
               <Link
                 to="/quality"
+                onClick={() => trackConversion("cta_click", { source: "home_quality" })}
                 className="inline-flex items-center gap-2 mt-8 text-[#111111] text-[12px] font-bold tracking-[0.10em] uppercase border-b-2 border-[#34c759] pb-1 hover:text-[#34c759] transition-colors"
               >
                 了解品质保障体系
@@ -525,6 +531,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/contact"
+              onClick={() => trackConversion("quote_cta", { source: "home_bottom" })}
               className="inline-flex items-center gap-2 px-10 py-3.5 bg-white text-[#34c759] text-[13px] font-bold tracking-[0.08em] uppercase hover:bg-white/90 transition-colors"
             >
               在线询盘
@@ -532,6 +539,7 @@ export default function Home() {
             </Link>
             <a
               href="tel:+8615659069988"
+              onClick={() => trackConversion("phone_click", { source: "home_bottom" })}
               className="inline-flex items-center gap-2 px-10 py-3.5 bg-transparent border-2 border-white/30 text-white text-[13px] font-bold tracking-[0.08em] uppercase hover:bg-white/10 transition-colors"
             >
               电话咨询

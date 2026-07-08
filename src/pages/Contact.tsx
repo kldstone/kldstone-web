@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { optimizedImage } from "@/lib/images";
+import { trackConversion } from "@/lib/analytics";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -42,7 +43,7 @@ export default function Contact() {
               {/* Phone */}
               <div>
                 <span className="text-[#111111] text-[10px] font-bold tracking-[0.16em] uppercase block mb-2">电话</span>
-                <a href="tel:+8615659069988" className="text-[#111111] text-[18px] font-black tracking-[0.02em] hover:opacity-60 transition-colors">
+                <a href="tel:+8615659069988" onClick={() => trackConversion("phone_click", { source: "contact_page" })} className="text-[#111111] text-[18px] font-black tracking-[0.02em] hover:opacity-60 transition-colors">
                   +86 156 5906 9988
                 </a>
               </div>
@@ -105,7 +106,7 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form action="https://formsubmit.co/kldstone.china@gmail.com" method="POST" className="space-y-6">
+              <form action="https://formsubmit.co/kldstone.china@gmail.com" method="POST" onSubmit={() => trackConversion("form_submit", { source: "contact_page" })} className="space-y-6">
                 <input type="hidden" name="_subject" value="KLD询盘 - 康利德石材官网" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : ''} />

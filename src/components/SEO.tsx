@@ -195,6 +195,35 @@ export default function SEO() {
       inLanguage: "zh-CN",
     });
 
+    if (pathname === "/") {
+      setJsonLd("schema-faq", {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "天然大理石和人造石有什么区别？",
+            acceptedAnswer: { "@type": "Answer", text: "天然大理石是亿万年地质作用形成的天然石材，每一块的纹理都是独一无二的。人造石是人工合成的材料，纹理可重复。天然大理石具有不可复制的美感和收藏价值，但需要适当的防护处理。康利德所有出厂板材均经过六面渗透型防护处理，兼顾美观与实用性。" },
+          },
+          {
+            "@type": "Question",
+            name: "水刀拼花的最小精度是多少？",
+            acceptedAnswer: { "@type": "Answer", text: "康利德的水刀切割精度可达 ±0.1mm。高压水流携带磨料以每秒 800 米的速度穿透石材，配合双系统全程数控，能够实现极其复杂的图案切割。所有拼花在出厂前都经过 1:1 预拼验收。" },
+          },
+          {
+            "@type": "Question",
+            name: "康利德的交货时间是多久？",
+            acceptedAnswer: { "@type": "Answer", text: "常规天然大理石产品在确认订单后 7-15 个工作日可发货。水刀拼花和 CNC 异形产品视复杂度需要 15-30 个工作日。具体交期取决于产品类型、数量和当前生产排期，请联系我们确认准确时间。" },
+          },
+          {
+            "@type": "Question",
+            name: "出口到哪些国家？包装如何保障？",
+            acceptedAnswer: { "@type": "Answer", text: "康利德石材出口全球 30 多个国家，包括美国、加拿大、澳大利亚、欧洲、中东和东南亚。所有出口产品均采用定制木箱加固、EPE 珍珠棉内衬、防潮处理和钢带打包，按海运集装箱堆码标准设计，确保长途运输安全。" },
+          },
+        ],
+      });
+    }
+
     const segments = canonicalPath.split("/").filter(Boolean);
     setJsonLd("schema-breadcrumb", {
       "@context": "https://schema.org",

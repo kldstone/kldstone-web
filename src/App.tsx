@@ -11,6 +11,7 @@ import Process from "./pages/Process";
 import Quality from "./pages/Quality";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
 import LandingQuote from "./pages/LandingQuote";
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/process" element={<Process />} />
           <Route path="/quality" element={<Quality />} />
           <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
           <Route path="/landing/quote" element={<LandingQuote />} />

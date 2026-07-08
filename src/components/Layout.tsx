@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import MobileStickyCTA from "./MobileStickyCTA";
 import SEO from "./SEO";
 
 export default function Layout() {
@@ -15,10 +16,11 @@ export default function Layout() {
     <div className="min-h-screen flex flex-col">
       <SEO />
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 pb-16 md:pb-0">
         <Outlet />
       </main>
       <Footer />
+      <MobileStickyCTA />
     </div>
   );
 }

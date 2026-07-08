@@ -507,8 +507,8 @@ export default function Home() {
 
             <div className="overflow-hidden img-hover">
               <img
-                src={optimizedImage("/brand-gallery/076-inspection-img-2504.jpg")}
-                alt="石材质检"
+                src={optimizedImage("/brand-gallery/home-exhibition-2026-07-08.jpg")}
+                alt="石材展会"
                 className="w-full aspect-[4/3] object-cover"
                 loading="lazy" decoding="async"
               />

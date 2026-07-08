@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { optimizedImage } from "@/lib/images";
 
 /* 全部工厂实景图片（36张） */
-const allPhotos = Array.from({ length: 34 }, (_, i) => ({
+const allPhotos = Array.from({ length: 35 }, (_, i) => ({
   src: `/brand-gallery/factory/factory-${String(i + 1).padStart(2, "0")}.jpg`,
   label: `实景 ${String(i + 1).padStart(2, "0")}`,
 }));

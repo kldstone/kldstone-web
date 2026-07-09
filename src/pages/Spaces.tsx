@@ -40,6 +40,34 @@ const spacesData: Record<string, string[]> = {
 
 const categories = ["全部", "酒店大堂", "别墅会所", "商业空间", "住宅应用"];
 
+const cases: Record<string, { title: string; id: string }> = {
+  "/brand-gallery/spaces-lobby-01.jpg": { title: "五星酒店大堂", id: "hotel-lobby-1" },
+  "/brand-gallery/spaces-lobby-02.jpg": { title: "五星酒店大堂", id: "hotel-lobby-1" },
+  "/brand-gallery/spaces-lobby-04.jpg": { title: "五星酒店大堂", id: "hotel-lobby-1" },
+  "/brand-gallery/spaces-lobby-05.jpg": { title: "五星酒店大堂", id: "hotel-lobby-1" },
+  "/brand-gallery/spaces-lobby-06.jpg": { title: "五星酒店大堂", id: "hotel-lobby-1" },
+  "/brand-gallery/spaces-lobby-07.jpg": { title: "五星酒店大堂", id: "hotel-lobby-1" },
+  "/brand-gallery/spaces-lobby-08.jpg": { title: "五星酒店大堂", id: "hotel-lobby-1" },
+  "/brand-gallery/spaces-lobby-09.jpg": { title: "五星酒店大堂", id: "hotel-lobby-1" },
+  "/brand-gallery/spaces-villa-01.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-villa-02.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-villa-03.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-villa-04.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-villa-05.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-villa-06.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-villa-07.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-villa-08.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-villa-09.jpg": { title: "私人别墅", id: "villa-1" },
+  "/brand-gallery/spaces-commercial-01.jpg": { title: "品牌旗舰店", id: "commercial-1" },
+  "/brand-gallery/spaces-commercial-02.jpg": { title: "品牌旗舰店", id: "commercial-1" },
+  "/brand-gallery/spaces-residential-01.jpg": { title: "高端住宅公寓", id: "residential-1" },
+  "/brand-gallery/spaces-residential-02.jpg": { title: "高端住宅公寓", id: "residential-1" },
+  "/brand-gallery/spaces-residential-03.jpg": { title: "高端住宅公寓", id: "residential-1" },
+  "/brand-gallery/spaces-residential-04.jpg": { title: "高端住宅公寓", id: "residential-1" },
+  "/brand-gallery/spaces-residential-05.jpg": { title: "高端住宅公寓", id: "residential-1" },
+  "/brand-gallery/spaces-residential-06.jpg": { title: "高端住宅公寓", id: "residential-1" },
+};
+
 const categoryLabels: Record<string, string> = {
   "酒店大堂": "奢华酒店大堂 · 石材是空间的第一句对白",
   "别墅会所": "私人别墅与高端会所 · 让家成为美术馆",
@@ -114,13 +142,21 @@ export default function Spaces() {
               className="relative break-inside-avoid overflow-hidden group cursor-pointer"
               onClick={() => setLightbox(src)}
             >
-              <img
-                src={optimizedImage(src)}
-                alt={`空间作品 ${i + 1}`}
-                className="w-full object-cover transition-all duration-700 group-hover:scale-[1.03]"
-                loading="lazy" decoding="async"
-              />
+              <Link to={`/cases/${cases[src]?.id || ''}`} onClick={(e) => e.stopPropagation()}>
+                <img
+                  src={optimizedImage(src)}
+                  alt={`空间作品 ${i + 1}`}
+                  className="w-full object-cover transition-all duration-700 group-hover:scale-[1.03]"
+                  loading="lazy" decoding="async"
+                />
+              </Link>
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-all duration-500" />
+              {cases[src] && (
+                <Link to={`/cases/${cases[src].id}`} className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity" onClick={(e) => e.stopPropagation()}>
+                  <p className="text-white text-[13px] font-bold tracking-[0.04em]">{cases[src].title}</p>
+                  <p className="text-white/60 text-[10px] tracking-[0.08em] mt-0.5">查看详情 →</p>
+                </Link>
+              )}
             </div>
           ))}
         </div>

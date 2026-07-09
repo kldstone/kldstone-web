@@ -420,16 +420,14 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
             <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center text-[#111111]/20">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-              <p className="absolute bottom-4 left-4 text-[#111111]/50 text-[12px] font-medium tracking-[0.04em] bg-white/80 px-3 py-1">即将上线</p>
+              <video className="w-full h-full object-cover" controls preload="none" poster="">
+                <source src="/videos/waterjet-cutting.mp4" type="video/mp4" />
+              </video>
             </div>
             <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
-              <div className="absolute inset-0 flex items-center justify-center text-[#111111]/20">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-              <p className="absolute bottom-4 left-4 text-[#111111]/50 text-[12px] font-medium tracking-[0.04em] bg-white/80 px-3 py-1">即将上线</p>
+              <video className="w-full h-full object-cover" controls preload="none" poster="">
+                <source src="/videos/waterjet-cutting.mp4" type="video/mp4" />
+              </video>
             </div>
           </div>
         </div>

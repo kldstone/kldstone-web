@@ -10,7 +10,7 @@ export default function About() {
           src={optimizedImage("/brand-gallery/about-hero-2026-07-06-v2.jpg")}
           alt="关于康利德"
           className="w-full h-auto max-h-[80vh] object-contain"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
         />
       </section>

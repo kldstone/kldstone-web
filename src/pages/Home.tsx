@@ -412,20 +412,15 @@ export default function Home() {
               Video
             </span>
             <h2 className="text-[#111111] text-[clamp(1.4rem,2.5vw,1.8rem)] font-black tracking-[0.03em] mb-3">
-              水刀拼花 · 工艺现场
+              广州国际石材展
             </h2>
             <p className="text-[#111111]/45 text-[14px] max-w-[560px] mx-auto leading-relaxed">
-              从切割到拼花，每一帧都是真实的工厂日常。精度、专注、匠心——都在镜头里。
+              2026年厦门国际石材展康利德展位现场，展示水刀拼花工艺与奢石家居新品。
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
+          <div className="grid grid-cols-1 gap-6 max-w-[760px] mx-auto">
             <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
-              <video className="w-full h-full object-cover" controls preload="none" poster="">
-                <source src="/videos/waterjet-cutting.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
-              <video className="w-full h-full object-cover" controls preload="none" poster="">
+              <video className="w-full h-full object-cover" controls preload="none" poster="/brand-gallery/home-exhibition-2026-07-08.jpg">
                 <source src="/videos/waterjet-cutting.mp4" type="video/mp4" />
               </video>
             </div>

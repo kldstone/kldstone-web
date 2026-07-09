@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+﻿import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { optimizedImage } from "@/lib/images";
 import { trackConversion } from "@/lib/analytics";
@@ -409,18 +409,18 @@ export default function Home() {
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-12">
             <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
-              Video
+              展会现场
             </span>
             <h2 className="text-[#111111] text-[clamp(1.4rem,2.5vw,1.8rem)] font-black tracking-[0.03em] mb-3">
               广州国际石材展
             </h2>
             <p className="text-[#111111]/45 text-[14px] max-w-[560px] mx-auto leading-relaxed">
-              2026年厦门国际石材展康利德展位现场，展示水刀拼花工艺与奢石家居新品。
+KLD Stone 携全系石材产品亮相广州国际建筑装饰石材展，现场展示水刀拼花、大理石大板、工程定制等核心工艺。真实展会，实拍呈现。
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 max-w-[760px] mx-auto">
+          <div className="max-w-[800px] mx-auto">
             <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
-              <video className="w-full h-full object-cover" controls preload="none" poster="/brand-gallery/home-exhibition-2026-07-08.jpg">
+              <video className="w-full h-full object-cover" controls preload="none" poster="/assets/视频封面.jpg">
                 <source src="/videos/waterjet-cutting.mp4" type="video/mp4" />
               </video>
             </div>
@@ -533,7 +533,7 @@ export default function Home() {
 
             <div className="overflow-hidden img-hover">
               <img
-                src={optimizedImage("/brand-gallery/home-bottom-2026-07-09.jpg")}
+src={optimizedImage("/assets/首页最底图.jpg")}
                 alt="石材展会"
                 className="w-full aspect-[4/3] object-cover"
                 loading="lazy" decoding="async"

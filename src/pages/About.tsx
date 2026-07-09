@@ -122,8 +122,11 @@ export default function About() {
       <section className="py-20 px-6 max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-4">
-          <div className="overflow-hidden img-hover">
-              <img src={optimizedImage("/brand-gallery/about-exhibition-02-2026-07-08.jpg")} alt="展会现场" className="w-full aspect-[4/3] object-cover" />
+            <div className="overflow-hidden img-hover">
+              <img src={optimizedImage("/brand-gallery/about-exhibition-2026-07-06.jpg")} alt="展会" className="w-full aspect-[4/3] object-cover" loading="lazy" decoding="async" />
+            </div>
+            <div className="overflow-hidden img-hover">
+              <img src={optimizedImage("/brand-gallery/about-exhibition-02-2026-07-08.jpg")} alt="展会现场" className="w-full aspect-[4/3] object-cover" loading="lazy" decoding="async" />
             </div>
           </div>
           <div>

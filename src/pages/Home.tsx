@@ -420,7 +420,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 gap-6 max-w-[760px] mx-auto">
             <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
-              <video className="w-full h-full object-cover" controls preload="none" poster="/brand-gallery/home-exhibition-2026-07-08.jpg">
+              <video className="w-full h-full object-cover" controls preload="none" poster="/brand-gallery/home-exhibition-2026-07-09.jpg">
                 <source src="/videos/waterjet-cutting.mp4" type="video/mp4" />
               </video>
             </div>
@@ -533,7 +533,7 @@ export default function Home() {
 
             <div className="overflow-hidden img-hover">
               <img
-                src={optimizedImage("/brand-gallery/home-exhibition-2026-07-08.jpg")}
+                src={optimizedImage("/brand-gallery/home-exhibition-2026-07-09.jpg")}
                 alt="石材展会"
                 className="w-full aspect-[4/3] object-cover"
                 loading="lazy" decoding="async"

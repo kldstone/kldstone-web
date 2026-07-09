@@ -403,6 +403,39 @@ export default function Home() {
       </section>
 
       {/* ================================================================ */}
+      {/* 视频展示 */}
+      {/* ================================================================ */}
+      <section className="bg-white py-20 px-6">
+        <div className="max-w-[1280px] mx-auto">
+          <div className="text-center mb-12">
+            <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
+              Video
+            </span>
+            <h2 className="text-[#111111] text-[clamp(1.4rem,2.5vw,1.8rem)] font-black tracking-[0.03em] mb-3">
+              水刀拼花 · 工艺现场
+            </h2>
+            <p className="text-[#111111]/45 text-[14px] max-w-[560px] mx-auto leading-relaxed">
+              从切割到拼花，每一帧都是真实的工厂日常。精度、专注、匠心——都在镜头里。
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
+            <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center text-[#111111]/20">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <p className="absolute bottom-4 left-4 text-[#111111]/50 text-[12px] font-medium tracking-[0.04em] bg-white/80 px-3 py-1">即将上线</p>
+            </div>
+            <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
+              <div className="absolute inset-0 flex items-center justify-center text-[#111111]/20">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <p className="absolute bottom-4 left-4 text-[#111111]/50 text-[12px] font-medium tracking-[0.04em] bg-white/80 px-3 py-1">即将上线</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
       {/* 项目案例精选 */}
       {/* ================================================================ */}
       <section className="bg-[#0f0f0f] py-20 px-6 text-white">

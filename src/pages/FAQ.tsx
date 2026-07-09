@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Accordion,
@@ -144,6 +145,26 @@ const faqData = [
 ];
 
 export default function FAQ() {
+  useEffect(() => {
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqData.flatMap(g =>
+        g.items.map(item => ({
+          "@type": "Question",
+          name: item.q,
+          acceptedAnswer: { "@type": "Answer", text: item.a },
+        }))
+      ),
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "schema-faqpage";
+    script.textContent = JSON.stringify(jsonLd);
+    document.head.appendChild(script);
+    return () => { const s = document.getElementById("schema-faqpage"); s?.remove(); };
+  }, []);
+
   return (
     <div>
       {/* Hero */}

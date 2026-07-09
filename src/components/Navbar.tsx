@@ -15,6 +15,7 @@ const navLinks = [
   { label: "空间作品", href: "/spaces" },
   { label: "工厂品鉴", href: "/craftsmanship" },
   { label: "常见问题", href: "/faq" },
+  { label: "新闻中心", href: "/blog" },
   { label: "关于我们", href: "/about" },
   { label: "联系我们", href: "/contact" },
 ];

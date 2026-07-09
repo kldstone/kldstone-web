@@ -12,6 +12,8 @@ import Quality from "./pages/Quality";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
+import BlogList from "./pages/BlogList";
+import BlogPost from "./pages/BlogPost";
 import LandingQuote from "./pages/LandingQuote";
 
 export default function App() {
@@ -32,6 +34,8 @@ export default function App() {
           <Route path="/quality" element={<Quality />} />
           <Route path="/about" element={<About />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
           <Route path="/landing/quote" element={<LandingQuote />} />

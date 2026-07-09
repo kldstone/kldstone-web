@@ -10,6 +10,8 @@ export default function About() {
           src={optimizedImage("/brand-gallery/about-hero-2026-07-06-v2.jpg")}
           alt="关于康利德"
           className="w-full h-auto max-h-[80vh] object-contain"
+          fetchpriority="high"
+          decoding="async"
         />
       </section>
 
@@ -56,6 +58,7 @@ export default function About() {
                   src={optimizedImage("/brand-gallery/about-card-craftsmanship-2026-07-06.jpg")}
                   alt="工厂品鉴"
                   className="w-full aspect-[4/3] object-cover img-hover"
+                  loading="lazy" decoding="async"
                 />
               </div>
               <h3 className="text-[var(--ink)] text-[16px] font-bold tracking-[0.04em] mb-2">
@@ -79,6 +82,7 @@ export default function About() {
                   src={optimizedImage("/brand-gallery/about-card-quality-2026-07-06.jpg")}
                   alt="品质保障"
                   className="w-full aspect-[4/3] object-cover img-hover"
+                  loading="lazy" decoding="async"
                 />
               </div>
               <h3 className="text-[var(--ink)] text-[16px] font-bold tracking-[0.04em] mb-2">
@@ -102,6 +106,7 @@ export default function About() {
                   src={optimizedImage("/brand-gallery/about-card-custom-2026-07-06.jpg")}
                   alt="定制服务"
                   className="w-full aspect-[4/3] object-cover img-hover"
+                  loading="lazy" decoding="async"
                 />
               </div>
               <h3 className="text-[var(--ink)] text-[16px] font-bold tracking-[0.04em] mb-2">

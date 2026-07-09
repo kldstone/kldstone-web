@@ -12,7 +12,7 @@ export default function LandingQuote() {
       <div className="bg-white border-b border-black/5">
         <div className="max-w-[960px] mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/kld-logo-web.png" alt="康利德石材" className="w-[80px] h-[33px] object-contain" />
+            <img src="/optimized/kld-logo-web.webp" alt="康利德石材" className="w-[80px] h-[33px] object-contain" decoding="async" />
           </Link>
           <a href="tel:+8615659069988" onClick={() => trackConversion("phone_click", { source: "landing_header" })} className="text-[#34c759] text-[14px] font-bold tracking-[0.04em]">
             +86 156 5906 9988
@@ -62,7 +62,7 @@ export default function LandingQuote() {
             </div>
 
             <div className="overflow-hidden rounded img-hover">
-              <img src={optimizedImage("/brand-gallery/076-inspection-img-2504.jpg")} alt="石材质检" className="w-full aspect-[16/9] object-cover" loading="lazy" />
+              <img src={optimizedImage("/brand-gallery/076-inspection-img-2504.jpg")} alt="石材质检" className="w-full aspect-[16/9] object-cover" loading="lazy" decoding="async" />
             </div>
           </div>
 

@@ -148,7 +148,7 @@ export default function FAQ() {
     <div>
       {/* Hero */}
       <section className="relative h-[45vh] min-h-[340px] bg-[#0f0f0f] overflow-hidden">
-        <img src={optimizedImage("/brand-gallery/craftsmanship-hero-2026-07-06.jpg")} alt="" className="w-full h-full object-cover opacity-60" />
+        <img src={optimizedImage("/brand-gallery/craftsmanship-hero-2026-07-06.jpg")} alt="" className="w-full h-full object-cover opacity-60" fetchpriority="high" decoding="async" />
         <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <div>

@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { optimizedImage } from "@/lib/images";
 import { trackConversion } from "@/lib/analytics";
@@ -174,6 +174,21 @@ export default function Home() {
               <p className="text-white/80 text-[clamp(0.85rem,1.4vw,1.1rem)] font-light tracking-[0.06em] leading-relaxed">
                 {slides[active].des}
               </p>
+              <div className="flex flex-wrap gap-3 mt-8 md:mt-10">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-[#34c759] text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-[#34c759]/80 transition-colors"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  获取报价
+                </Link>
+                <Link
+                  to="/collections/marble"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-transparent border-2 border-white/30 text-white text-[12px] font-bold tracking-[0.08em] uppercase hover:bg-white/10 transition-colors"
+                >
+                  查看产品
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -266,7 +281,7 @@ export default function Home() {
           {featuredProducts.map((p, i) => (
             <Link
               key={i}
-              to="/collections/marble"
+              to={"/collections/product/" + (p.img.match(/gani_(\d+)/) ? String(parseInt(p.img.match(/gani_(\d+)/)![1], 10) - 1) : "0")}
               className="group relative block overflow-hidden bg-[#f5f5f5] aspect-[3/4]"
             >
               <img
@@ -317,8 +332,7 @@ export default function Home() {
             {featuredMosaics.map((p, i) => (
               <Link
                 key={i}
-                to="/collections/mosaic"
-                className="group relative block overflow-hidden bg-[#f5f5f5] aspect-square"
+                to={"/collections/product/" + (p.img.match(/gani_(\d+)/) ? String(parseInt(p.img.match(/gani_(\d+)/)![1], 10) - 1) : "0")}                className="group relative block overflow-hidden bg-[#f5f5f5] aspect-square"
               >
                 <img
                   src={optimizedImage(p.img)}
@@ -403,9 +417,9 @@ export default function Home() {
       </section>
 
       {/* ================================================================ */}
-      {/* 视频展示 */}
-      {/* ================================================================ */}
-      <section className="bg-white py-20 px-6">
+{/* 视频展示 */}
+{/* ================================================================ */}
+<section className="bg-white py-20 px-6">
         <div className="max-w-[1280px] mx-auto">
           <div className="text-center mb-12">
             <span className="text-[#111111] text-[11px] font-bold tracking-[0.18em] uppercase block mb-4">
@@ -414,14 +428,14 @@ export default function Home() {
             <h2 className="text-[#111111] text-[clamp(1.4rem,2.5vw,1.8rem)] font-black tracking-[0.03em] mb-3">
               广州国际石材展
             </h2>
-            <p className="text-[#111111]/45 text-[14px] max-w-[560px] mx-auto leading-relaxed">
-KLD Stone 携全系石材产品亮相广州国际建筑装饰石材展，现场展示水刀拼花、大理石大板、工程定制等核心工艺。真实展会，实拍呈现。
+            <p className="text-[#111111]/45 text-[14px] max-w-[580px] mx-auto leading-relaxed">
+              KLD Stone 携全系石材产品亮相广州国际建筑装饰石材展，现场展示水刀拼花、大理石大板、工程定制等核心工艺。真实展会，实拍呈现。
             </p>
           </div>
-          <div className="max-w-[800px] mx-auto">
-            <div className="aspect-video bg-[#f5f5f5] overflow-hidden relative">
-              <video className="w-full h-full object-cover" controls preload="none" poster="/assets/视频封面.jpg">
-                <source src="/videos/waterjet-cutting.mp4" type="video/mp4" />
+          <div className="flex justify-center">
+            <div className="w-full max-w-[900px] aspect-video bg-[#f5f5f5] overflow-hidden relative">
+              <video className="w-full h-full object-cover" controls preload="none" poster="/视频封面.jpg">
+                <source src="/videos/guangzhou-expo.mp4" type="video/mp4" />
               </video>
             </div>
           </div>
@@ -533,7 +547,7 @@ KLD Stone 携全系石材产品亮相广州国际建筑装饰石材展，现场�
 
             <div className="overflow-hidden img-hover">
               <img
-src={optimizedImage("/assets/首页最底图.jpg")}
+                src={optimizedImage("/首页最底图.jpg")}
                 alt="石材展会"
                 className="w-full aspect-[4/3] object-cover"
                 loading="lazy" decoding="async"
@@ -541,9 +555,8 @@ src={optimizedImage("/assets/首页最底图.jpg")}
             </div>
           </div>
         </div>
-      </section>
+            </section>
 
-      {/* ================================================================ */}
       {/* 底部强 CTA */}
       {/* ================================================================ */}
       <section className="bg-[#34c759] py-16 px-6 text-center">

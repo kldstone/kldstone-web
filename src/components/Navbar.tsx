@@ -83,7 +83,7 @@ export default function Navbar() {
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-0">
             {navLinks.map((link) => (
-              <div key={link.href} className="relative group/dropdown">
+              <div key={link.href} className="relative group/dropdown" onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) setDropdownOpen(false); }}>
                 <Link
                   to={link.href}
                   className={`inline-flex items-center justify-center min-h-[44px] px-[12px] text-[12.5px] font-semibold tracking-[0.05em] transition-colors whitespace-nowrap ${
@@ -91,6 +91,7 @@ export default function Navbar() {
                       ? "text-[#34c759] font-bold"
                       : "text-[#111111]/60 hover:text-[#111111]"
                   }`}
+                  onFocus={() => link.children && setDropdownOpen(true)}
                   onMouseEnter={() => link.children && setDropdownOpen(true)}
                   onMouseLeave={() => link.children && setDropdownOpen(false)}
                 >

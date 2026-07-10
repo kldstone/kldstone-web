@@ -108,7 +108,7 @@ export default function Contact() {
             ) : (
               <form action="https://formsubmit.co/kldstone.china@gmail.com" method="POST" onSubmit={() => trackConversion("form_submit", { source: "contact_page" })} className="space-y-6">
                 <input type="hidden" name="_subject" value="KLD询盘 - 康利德石材官网" />
-                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_captcha" value="true" />
                 <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : ''} />
                 <input type="hidden" name="_template" value="table" />
 

@@ -1,14 +1,6 @@
 import { Link } from "react-router-dom";
 import { optimizedImage } from "@/lib/images";
 
-const inspectionImgs = [
-  "/brand-gallery/071-inspection-img-1921.jpg",
-  "/brand-gallery/072-inspection-img-1922.jpg",
-  "/brand-gallery/073-inspection-img-2091.jpg",
-  "/brand-gallery/074-inspection-img-2156.jpg",
-  "/brand-gallery/075-inspection-img-2502.jpg",
-  "/brand-gallery/076-inspection-img-2504.jpg",
-];
 
 const deliveryImgs = [
   "/brand-gallery/057-delivery-img-1901.jpg",
@@ -50,17 +42,14 @@ const packagingSteps = [
   {
     title: "木箱加固",
     desc: "每一件订单都根据产品尺寸定制木箱。内衬 EPE 珍珠棉，板材之间用瓦楞纸板隔开，箱体外加钢带打包。我们按照海运集装箱的堆码标准来设计包装——因为我们的产品确实要漂洋过海。",
-    img: "/brand-gallery/057-delivery-img-1901.jpg",
   },
   {
     title: "防潮处理",
     desc: "木箱内部放置干燥剂，箱体外覆防水膜。对于高价值拼花作品，增加真空包装层。南方的回南天、海上的盐雾、目的港的温差——这些因素都在我们的包装方案中被考虑到了。",
-    img: "/brand-gallery/058-delivery-img-1890.jpg",
   },
   {
     title: "物流追踪",
     desc: "从水头港到厦门港，再到全球各大主要港口——我们的物流团队提供从装柜到目的港的全程追踪。每批货物都有独立的箱单、唛头和保险文件。发货当日，您会收到装箱照片和清单确认邮件。",
-    img: "/brand-gallery/063-delivery-img-1878.jpg",
   },
 ];
 
@@ -115,19 +104,6 @@ export default function Quality() {
             </h2>
           </div>
 
-          {/* Inspection Gallery */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-16">
-            {inspectionImgs.map((src, i) => (
-              <div key={i} className="overflow-hidden img-hover">
-                <img
-                  src={optimizedImage(src)}
-                  alt={`质检 ${i + 1}`}
-                  className="w-full aspect-[4/3] object-cover"
-                  loading="lazy" decoding="async"
-                />
-              </div>
-            ))}
-          </div>
 
           {/* Quality Check Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -165,18 +141,10 @@ export default function Quality() {
         {packagingSteps.map((step, i) => (
           <div
             key={step.title}
-            className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ${
+            className={`${
               i !== packagingSteps.length - 1 ? "mb-16 pb-16 border-b border-[var(--line)]" : ""
-            } ${i % 2 === 1 ? "lg:[direction:rtl]" : ""}`}
+            }`}
           >
-            <div className={`overflow-hidden ${i % 2 === 1 ? "lg:[direction:ltr]" : ""}`}>
-              <img
-                src={optimizedImage(step.img)}
-                alt={step.title}
-                className="w-full aspect-[4/3] object-cover img-hover"
-                loading="lazy" decoding="async"
-              />
-            </div>
             <div className={i % 2 === 1 ? "lg:[direction:ltr]" : ""}>
               <span className="text-[#111111] text-[11px] font-bold tracking-[0.12em] opacity-60">
                 {String(i + 1).padStart(2, "0")}

@@ -10,3 +10,4 @@ dist/
 
 # Allow tracked env config
 !.env.production
+.env*

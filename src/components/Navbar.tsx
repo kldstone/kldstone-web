@@ -13,7 +13,14 @@ const navLinks = [
     ],
   },
   { label: "空间作品", href: "/spaces" },
-  { label: "工厂品鉴", href: "/craftsmanship" },
+  {
+    label: "工厂品鉴",
+    href: "/craftsmanship",
+    children: [
+      { label: "工厂实景", href: "/craftsmanship" },
+      { label: "十道工序", href: "/process" },
+    ],
+  },
   { label: "常见问题", href: "/faq" },
   { label: "新闻中心", href: "/blog" },
   { label: "关于我们", href: "/about" },
@@ -23,7 +30,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -34,7 +41,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false);
-    setDropdownOpen(false);
+    setActiveDropdown(null);
   }, [location]);
 
   const isActive = (href: string) => {
@@ -83,7 +90,7 @@ export default function Navbar() {
           {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-0">
             {navLinks.map((link) => (
-              <div key={link.href} className="relative group/dropdown" onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) setDropdownOpen(false); }}>
+              <div key={link.href} className="relative group/dropdown" onBlur={(e) => { if (!e.currentTarget.contains(e.relatedTarget as Node)) setActiveDropdown(null); }}>
                 <Link
                   to={link.href}
                   className={`inline-flex items-center justify-center min-h-[44px] px-[12px] text-[12.5px] font-semibold tracking-[0.05em] transition-colors whitespace-nowrap ${
@@ -92,8 +99,8 @@ export default function Navbar() {
                       : "text-[#111111]/60 hover:text-[#111111]"
                   }`}
                   onFocus={() => link.children && setDropdownOpen(true)}
-                  onMouseEnter={() => link.children && setDropdownOpen(true)}
-                  onMouseLeave={() => link.children && setDropdownOpen(false)}
+                  onMouseEnter={() => link.children && setActiveDropdown(link.href)}
+                  onMouseLeave={() => link.children && setActiveDropdown(null)}
                 >
                   {link.label}
                   {link.children && (
@@ -102,11 +109,11 @@ export default function Navbar() {
                 </Link>
 
                 {/* Dropdown submenu for Collections */}
-                {link.children && dropdownOpen && (
+                {link.children && activeDropdown === link.href && (
                   <div
                     className="absolute top-full left-0 min-w-[190px] bg-white shadow-lg border border-black/5 py-2 animate-fadeInDown"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
+                    onMouseEnter={() => setActiveDropdown(link.href)}
+                    onMouseLeave={() => setActiveDropdown(null)}
                   >
                     {link.children.map((child) => (
                       <Link

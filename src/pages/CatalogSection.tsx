@@ -1,33 +1,36 @@
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { optimizedImage } from "@/lib/images";
-import type { CatalogCategory } from "@/data/catalog";
+
+const categorySummaries = [
+  { key: "carved-parts", name: "欧式雕花构件", subtitle: "European Carved Components", description: "大理石欧式雕花构件系列，涵盖罗马柱、窗套线、浮雕、壁炉等装饰构件。", heroImg: "/catalog-images/carved-hero.jpg", productCount: 24 },
+  { key: "wall-panels", name: "石材护墙板", subtitle: "Stone Wall Panels", description: "法式与新中式风格石材护墙板，将天然石材质感融入经典墙面设计。", heroImg: "/catalog-images/wall-hero.jpg", productCount: 48 },
+  { key: "furniture", name: "石材家具", subtitle: "Stone Furniture", description: "天然大理石餐桌、茶几、边几与台面，让石材的永恒质感融入日常生活。", heroImg: "/catalog-images/furniture-hero.jpg", productCount: 122 },
+  { key: "oikos", name: "OIKOS 系列", subtitle: "Oikos Collection", description: "现代风格石材产品系列，以简约设计与天然材质服务当代建筑与室内空间。", heroImg: "/catalog-images/oikos-hero.jpg", productCount: 81 },
+  { key: "arttech", name: "艺术拼花图集", subtitle: "ARTTECH Mosaic Atlas", description: "涵盖欧式古典、中式意境与现代简约风格的水刀拼花图集。", heroImg: "/catalog-images/arttech-hero.jpg", productCount: 43 },
+] as const;
 
 export default function LazyCatalogSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [categories, setCategories] = useState<CatalogCategory[] | null>(null);
-  const [loaded, setLoaded] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const el = sectionRef.current;
-    if (!el || loaded) return;
+    if (!el || isVisible) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          import("@/data/catalog").then((mod) => {
-            setCategories(mod.default);
-            setLoaded(true);
-          });
+          setIsVisible(true);
           observer.disconnect();
         }
       },
-      { rootMargin: "400px" }
+      { rootMargin: "0px" }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [loaded]);
+  }, [isVisible]);
 
   return (
     <section ref={sectionRef} className="bg-white py-20 px-6">
@@ -42,7 +45,7 @@ export default function LazyCatalogSection() {
           </p>
         </div>
 
-        {!categories ? (
+        {!isVisible ? (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className="aspect-[4/3] bg-[#f0f0f0] animate-pulse rounded-sm" />
@@ -51,7 +54,7 @@ export default function LazyCatalogSection() {
         ) : (
           <>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {categories.map((cat) => (
+              {categorySummaries.map((cat) => (
                 <Link
                   key={cat.key}
                   to={`/catalog/${cat.key}`}
@@ -72,7 +75,7 @@ export default function LazyCatalogSection() {
                       {cat.description.length > 80 ? cat.description.slice(0, 80) + "..." : cat.description}
                     </p>
                     <span className="mt-5 inline-block text-[11px] font-bold tracking-[0.12em] text-white border border-white/30 px-5 py-2 group-hover:bg-white group-hover:text-[#111] transition-colors">
-                      共 {cat.products.length} 件产品
+                      共 {cat.productCount} 件产品
                     </span>
                   </div>
                 </Link>

@@ -79,7 +79,7 @@ const cases: CaseItem[] = [
     area: "直径 6 米圆形拼花",
     challenge: "酒店大堂中央需要一幅直径 6 米的圆形水刀拼花地面，图案包含超过 200 个独立切割片段。拼花需要与周围大理石地面无缝衔接，同时图案的对称性和色彩过渡必须精确到毫米级别。",
     solution: "我们的水刀拼花团队使用多色系石材（白金沙、黑白根等），通过 CAD 精确制图 + 高压水刀切割，所有 200+ 片段在工厂 1:1 预拼，确认后编号拆解、加固包装运输至现场安装。最终拼花误差控制在 ±0.5mm 以内。",
-    imgs: ["/brand-gallery/106-patterns-img-1860.jpg", "/brand-gallery/gani-products/gani_140_白金沙拼花.webp", "/brand-gallery/gani-products/gani_138_白金沙线灰拼花.webp"],
+    imgs: ["/brand-gallery/106-patterns-img-1860.jpg", "/gani-products/gani_140_白金沙拼花.webp", "/gani-products/gani_138_白金沙线灰拼花.webp"],
   },
 ];
 

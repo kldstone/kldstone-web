@@ -102,6 +102,7 @@ const featuredSpaces = [
 export default function Home() {
   const [active, setActive] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const currentSlide = slides[active];
 
   const next = useCallback(() => setActive((s) => (s + 1) % slides.length), []);
   const prev = useCallback(() => setActive((s) => (s - 1 + slides.length) % slides.length), []);
@@ -131,33 +132,25 @@ export default function Home() {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
-        {slides.map((s, i) => (
-          <div
-            key={i}
-            className={`absolute inset-0 transition-all duration-1000 ease-out ${
-              i === active
-                ? "opacity-100 scale-100"
-                : "opacity-0 scale-105 pointer-events-none"
-            }`}
-          >
-            <Link to={s.href} className="block w-full h-full relative">
-              <img
-                src={optimizedImage(s.img)}
-                alt={s.tit}
-                loading={i === 0 ? "eager" : "lazy"}
-                fetchPriority={i === 0 ? "high" : "low"}
-                decoding={i === 0 ? "sync" : "async"}
-                className="w-full h-full object-cover"
-                style={{
-                  transform: i === active ? "scale(1)" : "scale(1.08)",
-                  transition: "transform 6s ease-out",
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
-            </Link>
-          </div>
-        ))}
+        <div key={active} className="absolute inset-0" style={{ animation: "heroImageIn 700ms ease-out" }}>
+          <Link to={currentSlide.href} className="block w-full h-full relative">
+            <img
+              src={optimizedImage(currentSlide.img)}
+              alt={currentSlide.tit}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              onLoad={() => {
+                const nextImage = new Image();
+                nextImage.src = optimizedImage(slides[(active + 1) % slides.length].img);
+              }}
+              className="w-full h-full object-cover"
+              style={{ animation: "heroScale 6s ease-out both" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20" />
+          </Link>
+        </div>
 
         <div className="absolute inset-0 z-10 flex items-center">
           <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12 lg:px-16">
@@ -203,6 +196,8 @@ export default function Home() {
                   <button
                     key={i}
                     onClick={() => setActive(i)}
+                    aria-label={`切换到第 ${i + 1} 张轮播图`}
+                    aria-current={i === active ? "true" : undefined}
                     className="group relative h-[3px] transition-all duration-500"
                     style={{
                       width: i === active ? "48px" : "24px",
@@ -240,6 +235,14 @@ export default function Home() {
           @keyframes slideFadeIn {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
+          }
+          @keyframes heroImageIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          @keyframes heroScale {
+            from { transform: scale(1.04); }
+            to { transform: scale(1); }
           }
         `}</style>
       </div>
@@ -385,7 +388,7 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <div className="w-full max-w-[900px] aspect-video bg-[#f5f5f5] overflow-hidden relative">
-              <video className="w-full h-full object-cover" controls preload="none" poster="/视频封面.jpg">
+              <video className="w-full h-full object-cover" controls preload="none" poster="/optimized/视频封面.webp">
                 <source src="/videos/waterjet-cutting.mp4" type="video/mp4" />
               </video>
             </div>
@@ -498,7 +501,7 @@ export default function Home() {
 
             <div className="overflow-hidden img-hover">
               <img
-                src={optimizedImage("/首页最底图.jpg")}
+                src="/optimized/首页最底图.webp"
                 alt="石材展会"
                 className="w-full aspect-[4/3] object-cover"
                 loading="lazy" decoding="async"

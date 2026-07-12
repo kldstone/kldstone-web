@@ -2,7 +2,6 @@ import furnitureProducts from "./furniture-products";
 import carvedProducts from "./carved-products";
 import wallProducts from "./wall-products";
 import arttechProducts from "./arttech-products";
-import oikosProducts from "./oikos-products";
 
 // ============================================================
 // 产品画册 — 数据层类型与品类配置
@@ -61,14 +60,6 @@ const categories: CatalogCategory[] = [
     description: "2024-2026 石材家具画册系列，以天然大理石为材质打造的餐桌、茶几、边几、台面等家具，将石材的永恒质感融入日常生活。",
     heroImg: `${BASE}/furniture-hero.jpg`,
     products: furnitureProducts,
-  },
-  {
-    key: "oikos",
-    name: "OIKOS 系列",
-    subtitle: "Oikos Collection",
-    description: "Oikos 品牌画册，现代风格石材产品系列，以简约设计与天然材质结合，适合当代建筑与室内空间。",
-    heroImg: `${BASE}/oikos-hero.jpg`,
-    products: oikosProducts,
   },
   {
     key: "arttech",

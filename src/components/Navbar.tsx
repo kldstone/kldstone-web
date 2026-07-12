@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { trackConversion } from "@/lib/analytics";
 
+// Prefetch catalog routes on hover for instant navigation
+function prefetchCatalog() {
+  import("@/pages/Catalog");
+  import("@/pages/CatalogCategory");
+  import("@/pages/CatalogDetail");
+}
+
 const navLinks = [
   { label: "首页", href: "/" },
   {
@@ -109,8 +116,8 @@ export default function Navbar() {
                       ? "text-[#34c759] font-bold"
                       : "text-[#111111]/60 hover:text-[#111111]"
                   }`}
-                  onFocus={() => link.children && setDropdownOpen(true)}
-                  onMouseEnter={() => link.children && setActiveDropdown(link.href)}
+                  onFocus={() => { link.children && setDropdownOpen(true); if (link.href === "/catalog") prefetchCatalog(); }}
+                  onMouseEnter={() => { link.children && setActiveDropdown(link.href); if (link.href === "/catalog") prefetchCatalog(); }}
                   onMouseLeave={() => link.children && setActiveDropdown(null)}
                 >
                   {link.label}

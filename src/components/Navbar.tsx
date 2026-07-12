@@ -12,6 +12,17 @@ const navLinks = [
       { label: "水刀拼花", href: "/collections/mosaic" },
     ],
   },
+  {
+    label: "产品画册",
+    href: "/catalog",
+    children: [
+      { label: "欧式雕花构件", href: "/catalog/carved-parts" },
+      { label: "石材护墙板", href: "/catalog/wall-panels" },
+      { label: "石材家具", href: "/catalog/furniture" },
+      { label: "OIKOS 系列", href: "/catalog/oikos" },
+      { label: "艺术拼花图集", href: "/catalog/arttech" },
+    ],
+  },
   { label: "空间作品", href: "/spaces" },
   {
     label: "工厂品鉴",

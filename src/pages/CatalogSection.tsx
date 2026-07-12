@@ -6,7 +6,6 @@ const categorySummaries = [
   { key: "carved-parts", name: "欧式雕花构件", subtitle: "European Carved Components", description: "大理石欧式雕花构件系列，涵盖罗马柱、窗套线、浮雕、壁炉等装饰构件。", heroImg: "/catalog-images/carved-hero.jpg", productCount: 24 },
   { key: "wall-panels", name: "石材护墙板", subtitle: "Stone Wall Panels", description: "法式与新中式风格石材护墙板，将天然石材质感融入经典墙面设计。", heroImg: "/catalog-images/wall-hero.jpg", productCount: 48 },
   { key: "furniture", name: "石材家具", subtitle: "Stone Furniture", description: "天然大理石餐桌、茶几、边几与台面，让石材的永恒质感融入日常生活。", heroImg: "/catalog-images/furniture-hero.jpg", productCount: 122 },
-  { key: "oikos", name: "OIKOS 系列", subtitle: "Oikos Collection", description: "现代风格石材产品系列，以简约设计与天然材质服务当代建筑与室内空间。", heroImg: "/catalog-images/oikos-hero.jpg", productCount: 81 },
   { key: "arttech", name: "艺术拼花图集", subtitle: "ARTTECH Mosaic Atlas", description: "涵盖欧式古典、中式意境与现代简约风格的水刀拼花图集。", heroImg: "/catalog-images/arttech-hero.jpg", productCount: 43 },
 ] as const;
 

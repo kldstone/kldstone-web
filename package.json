@@ -8,7 +8,8 @@
     "build": "vite build",
     "typecheck": "tsc -b",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize:web-images": "node scripts/optimize-web-images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

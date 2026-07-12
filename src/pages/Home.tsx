@@ -107,11 +107,13 @@ export default function Home() {
   const next = useCallback(() => setActive((s) => (s + 1) % slides.length), []);
   const prev = useCallback(() => setActive((s) => (s - 1 + slides.length) % slides.length), []);
 
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || prefersReducedMotion) return;
     const t = setInterval(next, 6000);
     return () => clearInterval(t);
-  }, [isPaused, next]);
+  }, [isPaused, next, prefersReducedMotion]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -243,6 +245,20 @@ export default function Home() {
           @keyframes heroScale {
             from { transform: scale(1.04); }
             to { transform: scale(1); }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            @keyframes slideFadeIn {
+              from { opacity: 1; transform: none; }
+              to { opacity: 1; transform: none; }
+            }
+            @keyframes heroImageIn {
+              from { opacity: 1; }
+              to { opacity: 1; }
+            }
+            @keyframes heroScale {
+              from { transform: none; }
+              to { transform: none; }
+            }
           }
         `}</style>
       </div>

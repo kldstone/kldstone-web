@@ -5,11 +5,3 @@ export function optimizedImage(src: string) {
 
   return src;
 }
-
-export function imgProps(src: string, alt = "", extra = "") {
-  const isWebp = src.match(/\.(jpe?g|png)$/i);
-  const finalSrc = isWebp ? optimizedImage(src) : src;
-  const base = `src="${finalSrc}" alt="${alt}" ${extra}`;
-  if (!isWebp) return base;
-  return base;
-}

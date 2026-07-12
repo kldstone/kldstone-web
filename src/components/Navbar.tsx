@@ -3,7 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 import { trackConversion } from "@/lib/analytics";
 
 // Prefetch catalog routes on hover for instant navigation
+let catalogPrefetched = false;
 function prefetchCatalog() {
+  if (catalogPrefetched) return;
+  catalogPrefetched = true;
   import("@/pages/Catalog");
   import("@/pages/CatalogCategory");
   import("@/pages/CatalogDetail");
@@ -52,7 +55,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -84,7 +87,7 @@ export default function Navbar() {
 
       {/* Main nav */}
       <nav
-        className={`sticky top-0 z-50 transition-all duration-400 border-b ${
+        className={`sticky top-0 z-50 transition-[background-color,border-color,box-shadow] duration-400 border-b ${
           scrolled
             ? "bg-white/97 border-black/8 backdrop-blur-[20px] shadow-sm"
             : "bg-white/95 border-black/5 backdrop-blur-[20px]"
@@ -176,7 +179,9 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden border border-black/15 bg-transparent text-[#111111]/80 px-3 py-2 text-[12px] font-bold tracking-[0.08em]"
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+className="md:hidden border border-black/15 bg-transparent text-[#111111]/80 px-3 py-2 text-[12px] font-bold tracking-[0.08em]"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? "关闭" : "菜单"}
@@ -185,7 +190,7 @@ export default function Navbar() {
 
         {/* Mobile menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 ${
+          className={`md:hidden overflow-hidden transition-[max-height,border-color] duration-300 ${
             menuOpen ? "max-h-[700px] border-t border-black/5" : "max-h-0"
           }`}
         >

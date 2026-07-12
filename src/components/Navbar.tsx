@@ -26,7 +26,6 @@ const navLinks = [
       { label: "欧式雕花构件", href: "/catalog/carved-parts" },
       { label: "石材护墙板", href: "/catalog/wall-panels" },
       { label: "石材家具", href: "/catalog/furniture" },
-      { label: "OIKOS 系列", href: "/catalog/oikos" },
       { label: "艺术拼花图集", href: "/catalog/arttech" },
     ],
   },

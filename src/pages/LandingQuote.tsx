@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { optimizedImage } from "@/lib/images";
-import { trackConversion } from "@/lib/analytics";
+import { trackConversion, trackEvent } from "@/lib/analytics";
 
 export default function LandingQuote() {
-  const [submitted, setSubmitted] = useState(false);
+  const [submitted, setSubmitted] = useState(() => new URLSearchParams(window.location.search).get("submitted") === "1");
+
+  useEffect(() => {
+    if (submitted) trackConversion("form_submit", { source: "landing_quote" });
+  }, [submitted]);
+
+  const resetForm = () => {
+    window.history.replaceState({}, "", "/landing/quote");
+    setSubmitted(false);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -77,19 +86,22 @@ export default function LandingQuote() {
                 </div>
                 <h3 className="text-[#111111] text-[1.1rem] font-black mb-2">提交成功！</h3>
                 <p className="text-[#111111]/55 text-[14px] leading-relaxed">我们会在 24 小时内与您联系。</p>
-                <button onClick={() => setSubmitted(false)} className="mt-6 text-[#111111] text-[12px] font-bold tracking-[0.06em]">提交新的询盘</button>
+                <button onClick={resetForm} className="mt-6 text-[#111111] text-[12px] font-bold tracking-[0.06em]">提交新的询盘</button>
               </div>
             ) : (
               <form
                 action="https://formsubmit.co/kldstone.china@gmail.com"
                 method="POST"
-                onSubmit={() => trackConversion("form_submit", { source: "landing_quote" })}
+                onSubmit={() => trackEvent("lead_form_submit_attempt", { source: "landing_quote" })}
                 className="space-y-5"
               >
                 <input type="hidden" name="_subject" value="KLD报价 - 落地页询盘" />
                 <input type="hidden" name="_captcha" value="false" />
                 <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value={typeof window !== 'undefined' ? window.location.href : ''} />
+                <input type="hidden" name="_next" value={`${window.location.origin}/landing/quote?submitted=1`} />
+                <input type="hidden" name="utm_source" value={new URLSearchParams(window.location.search).get("utm_source") || "direct"} />
+                <input type="hidden" name="utm_campaign" value={new URLSearchParams(window.location.search).get("utm_campaign") || ""} />
+                <input type="hidden" name="utm_term" value={new URLSearchParams(window.location.search).get("utm_term") || ""} />
 
                 <div>
                   <label className="block text-[#111111] text-[11px] font-bold tracking-[0.06em] mb-1.5">姓名 *</label>

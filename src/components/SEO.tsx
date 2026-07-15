@@ -68,6 +68,26 @@ const pageMeta: Record<string, PageMeta> = {
     description: "联系康利德石材，获取天然大理石、水刀拼花、台面定制、工程石材和出口包装报价方案。",
     keywords: "石材报价,联系石材工厂,大理石询盘,水刀拼花报价,康利德联系方式",
   },
+  "/faq": {
+    title: "石材采购常见问题｜选材、定制、交期与出口",
+    description: "了解天然大理石选材、水刀拼花精度、石材定制流程、生产交期、质检标准、包装方式与出口运输常见问题。",
+    keywords: "石材采购常见问题,大理石选材,水刀拼花交期,石材出口包装",
+  },
+  "/blog": {
+    title: "石材知识与行业资讯｜康利德石材",
+    description: "阅读天然大理石选材、石材加工工艺、水刀拼花、项目应用与石材行业资讯。",
+    keywords: "石材知识,大理石选材,石材行业资讯,水刀拼花知识",
+  },
+  "/catalog": {
+    title: "石材产品目录｜雕刻、墙板、家具与工程定制",
+    description: "浏览康利德石材完整产品目录，包括石雕、石材墙板、石材家具、水刀拼花及工程定制产品。",
+    keywords: "石材产品目录,石雕,石材墙板,石材家具,工程石材",
+  },
+  "/landing/quote": {
+    title: "获取石材工厂报价｜康利德石材",
+    description: "提交天然大理石、水刀拼花、台面或工程石材需求，获取选材建议与工厂报价。",
+    keywords: "石材工厂报价,天然大理石报价,水刀拼花报价",
+  },
 };
 
 function resolveMeta(pathname: string) {
@@ -76,6 +96,30 @@ function resolveMeta(pathname: string) {
       title: "石材产品详情｜天然石材与定制加工",
       description: "查看康利德石材产品细节，支持样品咨询、规格确认、深化加工、包装出口与项目报价。",
       keywords: "石材产品详情,大理石样品,石材报价,工程石材",
+    };
+  }
+
+  if (pathname.startsWith("/blog/")) {
+    return {
+      title: "石材知识文章｜康利德石材",
+      description: "阅读康利德石材发布的天然石材选材、加工工艺、项目应用与行业经验文章。",
+      keywords: "石材知识,天然大理石,石材加工,石材项目",
+    };
+  }
+
+  if (pathname.startsWith("/catalog/")) {
+    return {
+      title: "石材产品详情｜工程规格与定制报价",
+      description: "查看石材产品图片与应用信息，咨询规格、材料、深化加工、出口包装和项目报价。",
+      keywords: "石材产品详情,工程石材,石材规格,石材定制报价",
+    };
+  }
+
+  if (pathname.startsWith("/cases/")) {
+    return {
+      title: "石材工程案例｜酒店、别墅与商业空间",
+      description: "查看康利德天然大理石与定制石材在酒店、别墅、住宅及商业空间中的工程应用。",
+      keywords: "石材工程案例,酒店石材,别墅石材,商业空间石材",
     };
   }
 
@@ -121,6 +165,11 @@ export default function SEO() {
     upsertMeta('meta[name="keywords"]', "content", meta.keywords, () => {
       const el = document.createElement("meta");
       el.setAttribute("name", "keywords");
+      return el;
+    });
+    upsertMeta('meta[name="robots"]', "content", pathname === "/landing/quote" ? "noindex, nofollow" : "index, follow, max-image-preview:large", () => {
+      const el = document.createElement("meta");
+      el.setAttribute("name", "robots");
       return el;
     });
     upsertMeta('link[rel="canonical"]', "href", canonical, () => {
@@ -195,34 +244,9 @@ export default function SEO() {
       inLanguage: "zh-CN",
     });
 
-    if (pathname === "/") {
-      setJsonLd("schema-faq", {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: [
-          {
-            "@type": "Question",
-            name: "天然大理石和人造石有什么区别？",
-            acceptedAnswer: { "@type": "Answer", text: "天然大理石是亿万年地质作用形成的天然石材，每一块的纹理都是独一无二的。人造石是人工合成的材料，纹理可重复。天然大理石具有不可复制的美感和收藏价值，但需要适当的防护处理。康利德所有出厂板材均经过六面渗透型防护处理，兼顾美观与实用性。" },
-          },
-          {
-            "@type": "Question",
-            name: "水刀拼花的最小精度是多少？",
-            acceptedAnswer: { "@type": "Answer", text: "康利德的水刀切割精度可达 ±0.1mm。高压水流携带磨料以每秒 800 米的速度穿透石材，配合双系统全程数控，能够实现极其复杂的图案切割。所有拼花在出厂前都经过 1:1 预拼验收。" },
-          },
-          {
-            "@type": "Question",
-            name: "康利德的交货时间是多久？",
-            acceptedAnswer: { "@type": "Answer", text: "常规天然大理石产品在确认订单后 7-15 个工作日可发货。水刀拼花和 CNC 异形产品视复杂度需要 15-30 个工作日。具体交期取决于产品类型、数量和当前生产排期，请联系我们确认准确时间。" },
-          },
-          {
-            "@type": "Question",
-            name: "出口到哪些国家？包装如何保障？",
-            acceptedAnswer: { "@type": "Answer", text: "康利德石材出口全球 30 多个国家，包括美国、加拿大、澳大利亚、欧洲、中东和东南亚。所有出口产品均采用定制木箱加固、EPE 珍珠棉内衬、防潮处理和钢带打包，按海运集装箱堆码标准设计，确保长途运输安全。" },
-          },
-        ],
-      });
-    }
+    // FAQ schema is owned by the visible /faq page component. Do not mark up
+    // FAQ content on other routes where those questions are not displayed.
+    document.getElementById("schema-faq")?.remove();
 
     const segments = canonicalPath.split("/").filter(Boolean);
     setJsonLd("schema-breadcrumb", {

@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import LoadingScreen from "./components/LoadingScreen";
 import { Suspense, lazy } from "react";
+import SEO from "./components/SEO";
 
 const Home = lazy(() => import("./pages/Home"));
 const Collections = lazy(() => import("./pages/Collections"));
@@ -48,7 +49,7 @@ export default function App() {
             <Route path="/catalog/:category" element={<CatalogCategory />} />
             <Route path="/catalog/:category/:id" element={<CatalogDetail />} />
           </Route>
-            <Route path="/landing/quote" element={<LandingQuote />} />
+            <Route path="/landing/quote" element={<><SEO /><LandingQuote /></>} />
         </Routes>
       </Suspense>
     </BrowserRouter>

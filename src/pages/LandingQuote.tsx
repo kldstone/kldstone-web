@@ -12,7 +12,7 @@ export default function LandingQuote() {
       <div className="bg-white border-b border-black/5">
         <div className="max-w-[960px] mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/optimized/kld-logo-web.webp" alt="康利德石材" className="w-[80px] h-[33px] object-contain" decoding="async" />
+            <img src="/optimized/kld-logo-web.webp" alt="康利德石材" className="w-[90px] h-[56px] object-contain" decoding="async" />
           </Link>
           <a href="tel:+8615659069988" onClick={() => trackConversion("phone_click", { source: "landing_header" })} className="text-[#34c759] text-[14px] font-bold tracking-[0.04em]">
             +86 156 5906 9988

@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand */}
             <div className="md:col-span-1">
-              <img src="/kld-logo-web.png" alt="康利德石材" className="w-[120px] mb-6 opacity-90" />
+              <img src="/kld-logo-web.png" alt="康利德石材" className="w-[120px] h-auto mb-6" />
               <p className="text-[#111111]/45 text-[13px] leading-relaxed max-w-[240px]">
                 以天然石材为语言,<br/>让每一寸纹理都讲述大地的故事。
               </p>
